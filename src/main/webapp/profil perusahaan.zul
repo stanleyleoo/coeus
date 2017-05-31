@@ -1,0 +1,146 @@
+<?page title="Profil Perusahaan | LemonHexa"?>
+
+<zk xmlns:n="native">
+    <style dynamic="true">
+
+	<!-- cut/hide the vertical borders in the grid rows -->
+        .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid  { 
+            border: none;
+            overflow: hidden;
+            zoom: 1;
+            background: white;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: none; 
+        }
+        .page-body{
+            height: 100px;
+        }
+        .z-toolbar{
+            background: none;
+            background-color: #cff791;
+            height:50px;
+            width:100%;
+         }
+     </style>
+    <window id="layoutWindow" border="none" apply="org.zkoss.bind.BindComposer"
+	height="100%" width="100%">
+        <div sclass="container-fluid">
+            <toolbar id="tb" sclass="toolbar">
+                <toolbarbutton image="/asset/images/toolbar-btn/add.png" onClick='alert("Add")' tooltiptext="Add"/>
+                <toolbarbutton image="/asset/images/toolbar-btn/browse.png" onClick='alert("Browse")' />
+                <toolbarbutton image="/asset/images/toolbar-btn/cancel.png" onClick='alert("Camcel")' />
+                <toolbarbutton image="/asset/images/toolbar-btn/del.png" onClick='alert("Delete")' />
+                <toolbarbutton image="/asset/images/toolbar-btn/info.png" onClick='alert("Info")' />
+                <toolbarbutton image="/asset/images/toolbar-btn/refresh.png" onClick='alert("Refresh")' />
+                <toolbarbutton image="/asset/images/toolbar-btn/save.png" onClick='alert("Save  ")' />
+            </toolbar> 
+            <div sclass="page-header" style="color:white;background-color:#444444;margin-top:-20px;">
+                <n:h1 style="padding-left:15px;padding-top:10px;">Profil Perusahaan</n:h1>
+            </div>
+            <vlayout sclass="page-body" spacing="0" apply="org.zkoss.bind.BindComposer">
+                <grid sclass="GridLayoutNoBorder">
+                    <columns>
+                        <column width="150px" sclass="col-xs-12"/>
+                        <column width="400px" sclass="col-xs-12"/>
+                        <column width="100px" sclass="col-xs-12"/>
+                        <column sclass="col-xs-12"/>
+                    </columns>
+                    <rows>
+                        <row style="background:#FFFFFF;">
+                            <label class="col-xs-12">Kode Perusahaan</label>
+                            <textbox id="kode_perusahaan" sclass="form-control col-xs-12" disabled="true" value=""/>
+                            <checkbox id="active" label="Active"/>
+                        </row>
+                        <row style="background:#FFFF;">
+                            <label class="col-xs-12">Nama Perusahaan</label>
+                            <textbox id="nama_perusahaan" sclass="form-control col-xs-12" disabled="true" value=""/>
+                        </row>
+                    </rows>
+                </grid>
+            </vlayout>    
+            <tabbox sclass="tabbox" width="100%">
+		<tabs>
+			<tab label="Halaman-1"/>
+			<tab label="Halaman-2" />
+                        <tab label="Data Pajak" />
+			<tab label="Data Manajemen Kredit" />
+                        <tab label="Data Contact Person" />
+			<tab label="Data Faktur" />
+                        <tab label="Data Giro" />
+		</tabs>
+		<tabpanels>
+                        <!--Tab panel halaman 1-->
+			<tabpanel>
+                            <grid>
+                                <columns>
+                                    <column width="150px" sclass="col-xs-12"/>
+                                    <column sclass="col-xs-12"/>
+                                    <column width="80px" sclass="col-xs-12"/>
+                                    <column sclass="col-xs-12"/>
+                                </columns>
+                                <rows>
+                                    <row style="background:#FFFF;">
+                                        Kelompok
+                                        <combobox id="kelompokSelectbox" width="200px">
+                                            <comboitem label="Customer"></comboitem>
+                                        </combobox>   
+                                    </row> 
+                                    <row style="background:#FFFF;">
+                                        Alamat
+                                        <textbox id="alamat" rows="4" width="300px"/>
+                                        Kode Pos
+                                        <textbox id="kodepos"/>
+                                    </row> 
+                                    <row style="background:#FFFF;">
+                                        Data Geografis
+                                        <combobox id="geoSelectbox" width="350px">
+                                            <comboitem label="Customer"></comboitem>
+                                        </combobox>   
+                                    </row>
+                                    <row style="background:#FFFF;">
+                                        Kelompok Lokasi
+                                        <combobox id="kelompoklokasiSelectbox" width="250px">
+                                            <comboitem label="Customer"></comboitem>
+                                        </combobox>   
+                                    </row>  
+                                    <row style="background:#FFFF;">
+                                        Telepon
+                                        <textbox width="200px"/>
+                                        Fax
+                                        <textbox width="200px"/>  
+                                    </row> 
+                                    <row style="background:#FFFF;">
+                                        Website
+                                        <textbox width="200px"/>  
+                                    </row>
+                                    <row style="background:#FFFF;">
+                                        Email
+                                        <textbox width="200px"/>
+                                    </row>  
+                                </rows>
+                            </grid>
+			</tabpanel>
+                        <!--END Tab panel halaman 1-->
+                        <!--tab panel halaman 2-->
+			<tabpanel>
+				<grid>
+					<columns>
+						<column label="This" />
+						<column label="That" />
+					</columns>
+					<template name="model">
+						<row>
+							<label value="${each.this}" />
+							<label value="${each.that}" />
+						</row>
+					</template>
+				</grid>
+			</tabpanel>
+                        <!--END tab panel halaman2-->
+		</tabpanels>
+            </tabbox>   
+        </div>
+    </window>
+</zk>

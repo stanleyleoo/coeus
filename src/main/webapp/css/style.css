@@ -1,0 +1,96 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Author     : Stanley
+*/
+
+body{
+     margin:0;padding:0;
+}
+.login-left {
+    height: 100vh;
+}
+.login-left .logo{
+    width:300px;
+    margin-top: 20vh;
+}
+.login-left h4{
+    color:#e81062;
+    font-weight: bold;
+    width: 60vh;
+    text-align: center;
+    padding-top:20px;
+}
+.login-right{
+    height: 100vh;
+    background: url('../asset/images/background.jpg') center;
+}
+.login-right h3{
+    font-size: 30px;
+    color:white;
+    font-weight:bold;
+}
+.forgot{
+    margin-top: 3vh;
+}
+.forgot p{
+    font-size: 12px;
+    color:white;
+    font-weight:bold;
+}
+.forgot a{
+    text-decoration: none;
+}
+.textbox{
+   margin:2vh 0 0vh 0;
+   border-radius:1vh;
+   height:5vh;
+   width: 100%;
+   text-align: center;
+}
+
+.login-right .login-btn{
+    width: 40vh;
+    height: 5vh;
+    border-radius: 3vh;
+    color:white;
+    border:2px solid white;
+    background: #e81062;   
+   font-weight: bold;
+   margin-top: 4vh;
+}
+.login-btn:hover{
+    background:white;
+    color:#e81062;
+    transition: 0.3s ease;
+}
+.footer{
+    margin-top:20vh;
+    color:white;
+}
+
+@media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+        
+        .login-left .logo{
+            width:220px;
+            margin-top: 10vh;
+        }
+        .login-left h4{
+            width:40vh;
+            font-size:2vh;
+        }
+        .footer{
+            font-size: 10px;
+        }
+   
+    }
+              
+              
+        
+

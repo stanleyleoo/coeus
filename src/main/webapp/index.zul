@@ -1,0 +1,40 @@
+<?page title="LemonHexa - Login"?>
+<!-- Load Bootstrap  -->
+<?link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"?>
+<?link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"?>
+<!-- Google Open Sans font -->
+<!-- Load fonts from local -->
+<?link href="css/fonts.css" rel="stylesheet" type="text/css"?>
+<?script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"?>
+<?script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"?>
+<!-- Unmark if we want to use fonts from google server
+<?link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'?>
+-->
+
+<zk xmlns:n="native">
+    <n:link href="css/style.css" rel="stylesheet"/>
+        <div sclass="login-left col-md-6 col-xs-12">
+            <vbox align="center" hflex="1" vflex="1" pack="center">
+            <image class="logo" src="asset/images/zklogo.png" align="center"/>
+            <n:h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</n:h4>
+            </vbox>
+        </div>
+        <div sclass="login-right col-md-6 col-xs-12">
+            <vbox align="center" pack="center" hflex="1" vflex="1" style="margin-top: 28vh">
+                <n:h3>Member Login</n:h3>
+                <separator height="4px" style="background-color:white;width:20%;border-radius:2px;margin-bottom:2vh;"/> 
+                <textbox sclass="textbox" placeholder="Username"></textbox>
+                <textbox sclass="textbox" placeholder="Password"></textbox>
+                <button sclass="login-btn" iconSclass="glyphicon glyphicon-menu-right" label="LOG IN" dir="reverse" href="home.zul"/> 
+                <div sclass="forgot">
+                    <n:p>forgot password? <n:a>Reset</n:a></n:p> 
+                </div>  
+                <div sclass="footer">
+                    <n:p>Copyright &#169;2017 LemonHexa</n:p>
+                </div>
+            </vbox>
+        </div>
+    
+</zk>

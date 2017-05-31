@@ -1,0 +1,15 @@
+
+<div sclass="navbar container-width">
+    <!--Brand Logo-->
+    <a label="LemonHexa" sclass="pull-left navbar-brand" iconSclass="z-icon-leaf"/>
+    <!--Navbar-->
+    <hlayout sclass="nav-user pull-right" spacing="0">
+        <a id="atask" iconSclass="z-icon-bell fa-2x fa-spin" popup="taskpp, position=after_end, type=toggle" sclass="grey">
+        <label value="4" sclass="badge badge-grey"/>
+        </a>
+        <a id="anoti" iconSclass="z-icon-home fa-2x fa-rotate-90" popup="taskpp, position=after_end, type=toggle" sclass="grey">
+        <label value="4" sclass="badge badge-grey"/>
+        </a>
+        <a id="amsg" iconSclass="z-icon-user fa-2x fa-rotate-90" popup="taskpp, position=after_end, type=toggle" sclass="grey"/>
+    </hlayout>
+</div>

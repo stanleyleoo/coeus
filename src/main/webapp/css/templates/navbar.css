@@ -1,0 +1,65 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 23, 2017, 11:30:41 PM
+    Author     : Stanley
+*/
+
+.navbar{
+    background-color: purple;
+}
+.navbar a{
+    color:white;
+    text-decoration: none;
+}
+.navbar .navbar-brand{
+    font-size: 4vh;
+}
+.nav-user > div > a{
+  background-color:none;
+  display: inline-block;
+  line-height: 52px;
+  text-align: center;
+  height: 100%;
+  width: 80px;
+  min-width: 40px;
+  padding: 0 8px;
+  position: relative;
+}
+
+.nav-user > div > a.grey,
+.nav-user > div .user-menu.grey {
+  background-color: none ! important;
+}
+.nav-user > div > a.grey.open,
+.nav-user > div .user-menu.grey.open,
+.nav-user > div > a.grey:hover,
+.nav-user > div .user-menu.grey:hover,
+.nav-user > div > a.grey:focus,
+.nav-user > div .user-menu.grey:focus,
+.nav-user > div > a.grey .z-menu-selected,
+.nav-user > div .user-menu.grey .z-menu-selected {
+  background-color: pink ! important;
+}
+
+.nav-user > div .badge {
+  position: relative;
+  top: -18px;
+  left: 2px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.nav-user > div > a:hover,
+.nav-user > div > a:focus {
+  background-color: #2c5976;
+}
+.nav-user > div .user-menu.z-menubar {
+  padding: 0;
+  border: 0;
+  background: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  border-left: 1px solid #DDD;
+}

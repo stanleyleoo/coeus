@@ -1,0 +1,69 @@
+<div id="sidebar" sclass="sidebar" apply="com.lemonhexa.web.templates.sidebarComposer">
+    <!-- SideBar -->
+    <navbar id="navbar" sclass="nav-list" orient="vertical">
+        <navitem label="Dashboard" selected="true" iconSclass="z-icon-dashboard" onClick="@command('addTab', tabName='Dashboard', tabPath='dashboard.zul')"/>
+        <nav label="Data Master" iconSclass="z-icon-desktop">
+            <navitem label="Profil Perusahaan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Perusahaan', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Kategori Perusahaan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kategori Perusahaan', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Profil Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Produk', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Kategori Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kategori Produk', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Profil Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Pegawai', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Sales Group" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Sales Group', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Geo Data" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Geo Data', tabPath='profil perusahaan.zul')"/>
+        </nav>
+        <nav label="Keuangan" iconSclass="z-icon-money">
+            <navitem label="Kelompok Akun" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kelompok Akun', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Nomor Perkiraan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Nomor Perkiraan', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Mata Uang" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Mata Uang', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Jurnal" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Jurnal', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Buku Besar Kas" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Buku Besar Kas', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Buku Besar Bank" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Buku Besar Bank', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Buku Besar Biaya" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Buku besar Biaya', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Buku Besar Lainnya" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Buku Besar Lainnya', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Giro Terima" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Giro Terima', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Giro Bayar" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Giro Bayar', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Laporan Piutang" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Laporan Piutang', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Laporan Hutang" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Laporan Hutang', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Laporan Neraca Saldo" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Laporan Neraca Saldo', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Laporan Laba Rugi" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Laporan Laba Rugi', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Laporan Neraca" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Laporan Neraca', tabPath='profil perusahaan.zul')"/>
+        </nav>
+        <nav label="Stok" iconSclass="z-icon-archive">
+            <navitem label="Laporan Analisa Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Laporan Analisa Produk', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Daftar Stock" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Daftar Stok', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Kartu Stock" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kartu Stok', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Stok Masuk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Stok Masuk', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Stok Keluar" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Stok Keluar', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Stok Mutasi" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Stok Mutasi', tabPath='profil perusahaan.zul')"/>
+        </nav>
+        <nav label="Penjualan" iconSclass="z-icon-credit-card">
+            <navitem label="Pesanan Penjualan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Pesanan Penjualan', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Faktur Penjualan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Faktur Penjualan', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Pengiriman Penjualan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Pengiriman Penjualan', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Retur Penjualan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Retur Penjualan', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Pembayaran Penjualan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Pembayaran Penjualan', tabPath='profil perusahaan.zul')"/>
+        </nav>
+        <nav label="Pembelian" iconSclass="z-icon-tags">
+            <navitem label="Pesanan Pembelian" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Pesanan Pembelian', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Faktur Pembelian" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Faktur Pembelian', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Retur Pembelian" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Retur Pembelian', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Pembayaran Pembelian" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Pembayaran Pembelian', tabPath='profil perusahaan.zul')"/>
+        </nav>
+        <nav label="Perpajakan" iconSclass="z-icon-book">
+            <navitem label="Faktur Penjualan Pajak" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Faktur Penjualan Pajak', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Nota Retur Penjualan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Nota Retur Penjualan', tabPath='profil perusahaan.zul')"/>
+        </nav>
+        <nav label="Konfigurasi" iconSclass="z-icon-gear">
+            <navitem label="Hak Akses" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Hak Akses', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Profil Pemakai" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Pemakai', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Hak Akses" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Query Database', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Hak Akses" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Setting Aplikasi', tabPath='profil perusahaan.zul')"/>
+        </nav>
+    </navbar>
+    <!-- Toggler -->
+    <div sclass="sidebar-collapse">
+        <a id="toggler" iconSclass="z-icon-angle-double-left"/>
+    </div>
+    
+</div>
+

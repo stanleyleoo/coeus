@@ -1,0 +1,38 @@
+<?page title="Dashboard | LemonHexa"?>
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+<!-- Load Bootstrap  -->
+<?link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"?>
+<?link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"?>
+<!-- Google Open Sans font -->
+<!-- Load fonts from local -->
+<?link href="css/fonts.css" rel="stylesheet" type="text/css"?>
+
+<!-- Unmark if we want to use fonts from google server
+<?link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'?>
+-->
+<?link href="css/templates/navbar.css" rel="stylesheet" type="text/css"?>
+<?link href="css/templates/sidebar.css" rel="stylesheet" type="text/css"?>
+<zk xmlns:n="native">
+    <window closable="false" id="index" width="100%" height="100%"
+            apply="org.zkoss.bind.BindComposer" 
+            viewModel="@id('vm') @init('com.lemonhexa.web.templates.sidebarComposer')" >
+        
+        <include src="templates/navbar.zul"/>
+        
+        <hlayout id='main' spacing='0' style="margin-top:-15px;">
+            <include src="templates/sidebar.zul"/>
+            <vlayout hflex="1" vflex="1" style="width:100%;">
+                <tabbox model="@load(vm.tabsModel)" width="100%">
+                    <template name="model:tab" var="detail">
+                        <tab label="@load(detail.title)" vflex="1" closable="true" onClose="@command('closeTab', tabToClose=detail)"/>
+                    </template>
+                    <template name="model:tabpanel" >
+                        <tabpanel class="overflow" vflex="0.5">
+                            <include src="@load(each.path)"/>
+                        </tabpanel>
+                    </template>
+                </tabbox>
+            </vlayout>
+        </hlayout>
+    </window>
+</zk>

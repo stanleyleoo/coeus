@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+
+    <window id="layoutWindow" border="none" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.lemonhexa.web.route.Route')"
+	height="100%" onBookmarkChange="@command('onHashChange', url = event.bookmark)">
+    <script type="text/javascript" src="js/route.js" defer="true" />
+        <label>Hello World!</label>
+    <vlayout style="height:500px;">
+        <button label="Click Me!" onClick="@command('go')" />
+    
+    <div id="contentHolder" style="overflow: auto;" vflex="true" >
+        <!-- CONTENT GOES HERE -->
+<!--        <window apply="com.lemonhexa.web.chart.PieBasicComposer">
+            <charts id="chart" type="pie" title="Browser market shares at a specific website, 2010"/>
+        </window>-->
+    </div>
+    </vlayout>
+    </window>
+</zk>
