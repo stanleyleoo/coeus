@@ -14,9 +14,10 @@
             border-right: none;
             border-bottom: none; 
         }
-        .page-body{
-            height: 100px;
+        .page-header{
+        color:white;background-color:#444444;margin-top:-20px;
         }
+        
         .z-toolbar{
             background: none;
             background-color: #cff791;
@@ -25,7 +26,7 @@
          }
      </style>
     <window id="layoutWindow" border="none" apply="org.zkoss.bind.BindComposer"
-	height="100%" width="100%">
+	height="100%" width="100%" contentStyle="overflow:auto">
         <div sclass="container-fluid">
             <toolbar id="tb" sclass="toolbar">
                 <toolbarbutton image="/asset/images/toolbar-btn/add.png" onClick='alert("Add")' tooltiptext="Add"/>
@@ -36,15 +37,13 @@
                 <toolbarbutton image="/asset/images/toolbar-btn/refresh.png" onClick='alert("Refresh")' />
                 <toolbarbutton image="/asset/images/toolbar-btn/save.png" onClick='alert("Save  ")' />
             </toolbar> 
-            <div sclass="page-header" style="color:white;background-color:#444444;margin-top:-20px;">
+            <div sclass="page-header">
                 <n:h1 style="padding-left:15px;padding-top:10px;">Profil Perusahaan</n:h1>
             </div>
-            <vlayout sclass="page-body" spacing="0" apply="org.zkoss.bind.BindComposer">
+            <vlayout height="1" width="1" spacing="0" apply="org.zkoss.bind.BindComposer">
                 <grid sclass="GridLayoutNoBorder">
                     <columns>
                         <column width="150px" sclass="col-xs-12"/>
-                        <column width="400px" sclass="col-xs-12"/>
-                        <column width="100px" sclass="col-xs-12"/>
                         <column sclass="col-xs-12"/>
                     </columns>
                     <rows>

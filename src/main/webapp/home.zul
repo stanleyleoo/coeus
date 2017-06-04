@@ -19,7 +19,7 @@
         
         <include src="templates/navbar.zul"/>
         
-        <hlayout id='main' spacing='0' style="margin-top:-15px;">
+        <hlayout id='main' spacing='0' vflex="1" style="margin-top:-15px;">
             <include src="templates/sidebar.zul"/>
             <vlayout hflex="1" vflex="1" style="width:100%;">
                 <tabbox model="@load(vm.tabsModel)" width="100%">

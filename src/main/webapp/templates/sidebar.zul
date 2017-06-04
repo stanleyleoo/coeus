@@ -4,12 +4,12 @@
         <navitem label="Dashboard" selected="true" iconSclass="z-icon-dashboard" onClick="@command('addTab', tabName='Dashboard', tabPath='dashboard.zul')"/>
         <nav label="Data Master" iconSclass="z-icon-desktop">
             <navitem label="Profil Perusahaan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Perusahaan', tabPath='profil perusahaan.zul')"/>
-            <navitem label="Kategori Perusahaan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kategori Perusahaan', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Kategori Perusahaan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kategori Perusahaan', tabPath='KategoriPerusahaan.zul')"/>
             <navitem label="Profil Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Produk', tabPath='profil perusahaan.zul')"/>
             <navitem label="Kategori Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kategori Produk', tabPath='profil perusahaan.zul')"/>
             <navitem label="Profil Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Pegawai', tabPath='profil perusahaan.zul')"/>
             <navitem label="Sales Group" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Sales Group', tabPath='profil perusahaan.zul')"/>
-            <navitem label="Geo Data" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Geo Data', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Geografis" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Geo Data', tabPath='GeoData.zul')"/>
         </nav>
         <nav label="Keuangan" iconSclass="z-icon-money">
             <navitem label="Kelompok Akun" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kelompok Akun', tabPath='profil perusahaan.zul')"/>
