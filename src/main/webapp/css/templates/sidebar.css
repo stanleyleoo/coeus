@@ -10,7 +10,7 @@ and open the template in the editor.
 
 .sidebar {
   width: 189px;
-  float: left;
+  float: left; 
   position: relative;
   border: 1px solid #cccccc;
   border-width: 0 1px 0 0;
@@ -47,7 +47,6 @@ and open the template in the editor.
   border: 1px solid #cccccc;
   border-width: 0 1px 0 0;
 }
-
 .nav-list.z-navbar > ul > .z-nav > ul,
 .z-nav-popup {
   position: relative;
@@ -60,7 +59,6 @@ and open the template in the editor.
 }
 
 .nav-list.z-navbar > ul > li {
-  border-top: 1px solid #E5E5E5;
 /*  border-bottom: 1px solid #E5E5E5;*/
   position: relative;
 }

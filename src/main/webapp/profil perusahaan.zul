@@ -25,8 +25,8 @@
             width:100%;
          }
      </style>
-    <window id="layoutWindow" border="none" apply="org.zkoss.bind.BindComposer"
-	height="100%" width="100%" contentStyle="overflow:auto">
+    <vlayout id="layoutWindow" apply="org.zkoss.bind.BindComposer"
+	height="100%" width="100%">
         <div sclass="container-fluid">
             <toolbar id="tb" sclass="toolbar">
                 <toolbarbutton image="/asset/images/toolbar-btn/add.png" onClick='alert("Add")' tooltiptext="Add"/>
@@ -58,8 +58,9 @@
                         </row>
                     </rows>
                 </grid>
-            </vlayout>    
-            <tabbox sclass="tabbox" width="100%">
+            </vlayout> 
+            <vlayout>   
+            <tabbox sclass="tabbox" hflex='1'>
 		<tabs>
 			<tab label="Halaman-1"/>
 			<tab label="Halaman-2" />
@@ -117,8 +118,10 @@
                                     <row style="background:#FFFF;">
                                         Email
                                         <textbox width="200px"/>
-                                    </row>  
+                                    </row>
+                                    
                                 </rows>
+                                
                             </grid>
 			</tabpanel>
                         <!--END Tab panel halaman 1-->
@@ -139,7 +142,8 @@
 			</tabpanel>
                         <!--END tab panel halaman2-->
 		</tabpanels>
-            </tabbox>   
+            </tabbox>  
+            </vlayout> 
         </div>
-    </window>
+    </vlayout>
 </zk>

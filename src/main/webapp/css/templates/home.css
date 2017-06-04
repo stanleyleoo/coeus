@@ -1,0 +1,16 @@
+.tabbox{
+    width: 1339px;
+}
+.z-tabpanel{
+    padding:0;
+    max-height: 685px;
+    overflow-y: auto;
+}
+.homepage{
+    margin:0;
+    padding: 0;
+}
+.container-fluid {
+    padding:0;
+    margin: 0 auto;
+}
