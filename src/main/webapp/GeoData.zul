@@ -9,7 +9,7 @@
             width:50vh;
         }
     </style>
-    <window id="layoutWindow" border="none" apply="org.zkoss.bind.BindComposer"
+    <vlayout id="layoutWindow" apply="org.zkoss.bind.BindComposer"
 	height="100%" width="100%">
         <div sclass="container-fluid">
             <toolbar id="tb" sclass="toolbar">
@@ -21,6 +21,10 @@
                 <toolbarbutton image="/asset/images/toolbar-btn/refresh.png" onClick='alert("Refresh")' />
                 <toolbarbutton image="/asset/images/toolbar-btn/save.png" onClick='alert("Save  ")' />
             </toolbar>
+            <div sclass="page-header">
+                <label value="Data Geografik"/>
+                <a label="overview &amp; stats" iconSclass="z-icon-angle-double-right" sclass="subtitle"/>
+            </div>
             <div sclass="div-cari"> 
                 <div sclass="cari input-group">
                     <span class="input-group-addon">Cari</span><textbox class="form-control"/>
@@ -59,5 +63,5 @@
                 </listitem>
             </listbox>
         </div>
-    </window>
+    </vlayout>
 </zk>

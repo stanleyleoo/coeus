@@ -9,6 +9,7 @@ and open the template in the editor.
 */
 
 .navbar{
+    height:70px;
     background-color: purple;
 }
 .navbar a{
@@ -17,9 +18,10 @@ and open the template in the editor.
 }
 .navbar .navbar-brand{
     font-size: 4vh;
+    margin-top:1.6vh;
 }
 .nav-user > div > a{
-  background-color:none;
+  background-color:transparent;
   display: inline-block;
   line-height: 52px;
   text-align: center;
@@ -32,7 +34,10 @@ and open the template in the editor.
 
 .nav-user > div > a.grey,
 .nav-user > div .user-menu.grey {
-  background-color: none ! important;
+  background-color: transparent ! important;
+  padding-top:1.6vh;
+  border: none;
+  height:70px;
 }
 .nav-user > div > a.grey.open,
 .nav-user > div .user-menu.grey.open,
@@ -43,6 +48,7 @@ and open the template in the editor.
 .nav-user > div > a.grey .z-menu-selected,
 .nav-user > div .user-menu.grey .z-menu-selected {
   background-color: pink ! important;
+  transition: 0.3s;
 }
 
 .nav-user > div .badge {
@@ -63,3 +69,27 @@ and open the template in the editor.
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   border-left: 1px solid #DDD;
 }
+/*iphone 5*/
+@media screen and (max-width: 1024px) {
+    .navbar .navbar-brand{
+      font-size: 3vh;
+     margin-top:2vh;
+      }
+    .nav-user > div > a{
+      line-height: 52px;
+      text-align: center;
+      width: 30px;
+      padding: 0 0px;
+      position: relative;
+    }
+    
+    .nav-user > div .badge {
+        font-size: 9px;
+        position: relative;
+        top: -72px;
+        left:10px;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+    
+  }

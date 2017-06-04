@@ -27,7 +27,7 @@
                 <separator height="4px" style="background-color:white;width:20%;border-radius:2px;margin-bottom:2vh;"/> 
                 <textbox sclass="textbox" placeholder="Username"></textbox>
                 <textbox sclass="textbox" placeholder="Password"></textbox>
-                <button sclass="login-btn" iconSclass="glyphicon glyphicon-menu-right" label="LOG IN" dir="reverse" href="homes.zul"/> 
+                <button sclass="login-btn" iconSclass="glyphicon glyphicon-menu-right" label="LOG IN" dir="reverse" href="home.zul"/> 
                 <div sclass="forgot">
                     <n:p>forgot password? <n:a>Reset</n:a></n:p> 
                 </div>  

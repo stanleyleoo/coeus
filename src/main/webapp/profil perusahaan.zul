@@ -14,9 +14,6 @@
             border-right: none;
             border-bottom: none; 
         }
-        .page-header{
-        color:white;background-color:#444444;margin-top:-20px;
-        }
         
         .z-toolbar{
             background: none;
@@ -38,7 +35,8 @@
                 <toolbarbutton image="/asset/images/toolbar-btn/save.png" onClick='alert("Save  ")' />
             </toolbar> 
             <div sclass="page-header">
-                <n:h1 style="padding-left:15px;padding-top:10px;">Profil Perusahaan</n:h1>
+                <label value="Profil Perusahaan"/>
+                <a label="overview &amp; stats" iconSclass="z-icon-angle-double-right" sclass="subtitle"/>
             </div>
             <vlayout height="1" width="1" spacing="0" apply="org.zkoss.bind.BindComposer">
                 <grid sclass="GridLayoutNoBorder">
