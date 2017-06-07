@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <div sclass="right_col" 
+         apply="org.zkoss.bind.BindComposer" 
+         validationMessages="@id('vmsgs')" 
+         viewModel="@id('vm') @init('com.lemonhexa.web.ui.web.GeodataVm')">
+        <div sclass="row">
+            <div sclass="col-md-12 col-sm-12 col-xs-12">
+                <div sclass="x_panel">
+                    <include src="templates/toolbar.zul"/>
+                    <div sclass="x_content">
+                        <!--class="form-horizontal"--> 
+                        <grid sclass="tblWithoutHover" xmlns:n="native">
+                            <columns class="col-md-12">
+                                <column class="col-md-12"/>
+                            </columns> 
+
+                            <rows>      
+                                <row>
+                                    <div class="form-group row">
+                                        <n:label for="txtGlobalRecordId" class="col-sm-2 control-label">Global Record Id</n:label>
+                                        <hlayout sclass="col-sm-2">
+                                            <textbox id="txtGlobalRecordId" sclass="form-control input-sm" hflex="1" maxlength="11" 
+                                                     disabled="@load(empty vm.selected)" errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.globalRecordId) @save(vm.selected.globalRecordId, before='saveClick')  @validator('beanValidator')"/>
+                                        </hlayout>
+                                    </div>
+                                </row>
+                                
+                                <row>
+                                    <div class="form-group row">
+                                        <n:label for="txtDistrict" class="col-sm-2 control-label">District</n:label>
+                                        <hlayout sclass="col-sm-2">
+                                            <textbox id="txtDistrict" maxlength="30" sclass="form-control input-sm" hflex="1" 
+                                                     disabled="@load(empty vm.selected)" errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.district) @save(vm.selected.district, before='saveClick')  @validator('beanValidator')"/>
+                                        </hlayout>
+                                    </div>
+                                </row>
+                                
+                                <row>
+                                    <div class="form-group row">
+                                        <n:label for="txtRegency" class="col-sm-2 control-label">Regency</n:label>
+                                        <hlayout sclass="col-sm-2">
+                                            <textbox id="txtRegency" sclass="form-control input-sm" hflex="1" maxlength="11" 
+                                                     disabled="@load(empty vm.selected)" errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.regency) @save(vm.selected.regency, before='saveClick')  @validator('beanValidator')"/>
+                                        </hlayout>
+                                    </div>
+                                </row>
+                                
+                                <row>
+                                    <div class="form-group row">
+                                        <n:label for="txtProvince" class="col-sm-2 control-label">Province</n:label>
+                                        <hlayout sclass="col-sm-2">
+                                            <textbox id="txtProvince" maxlength="30" sclass="form-control input-sm" hflex="1" 
+                                                     disabled="@load(empty vm.selected)" errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.province) @save(vm.selected.province, before='saveClick')  @validator('beanValidator')"/>
+                                        </hlayout>
+                                    </div>
+                                </row>
+                                
+                                <row>
+                                    <div class="form-group row">
+                                        <n:label for="txtCountry" class="col-sm-2 control-label">Country</n:label>
+                                        <hlayout sclass="col-sm-2">
+                                            <textbox id="txtCountry" sclass="form-control input-sm" hflex="1" maxlength="11" 
+                                                     disabled="@load(empty vm.selected)" errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.country) @save(vm.selected.country, before='saveClick')  @validator('beanValidator')"/>
+                                        </hlayout>
+                                    </div>
+                                </row>
+                                
+                                <row>
+                                    <div class="form-group row">
+                                        <n:label for="txtNote" class="col-sm-2 control-label">Note</n:label>
+                                        <hlayout sclass="col-sm-2">
+                                            <textbox id="txtNote" maxlength="30" sclass="form-control input-sm" hflex="1" 
+                                                     disabled="@load(empty vm.selected)" errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.note) @save(vm.selected.note, before='saveClick')  @validator('beanValidator')"/>
+                                        </hlayout>
+                                    </div>
+                                </row>
+                                
+                                <row>
+                                    <div class="form-group row">
+                                        <n:label for="txtRecordVersion" class="col-sm-2 control-label">Record Version</n:label>
+                                        <hlayout sclass="col-sm-2">
+                                            <textbox id="txtRecordVersion" sclass="form-control input-sm" hflex="1" maxlength="11" 
+                                                     disabled="@load(empty vm.selected)" errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.recordVersion) @save(vm.selected.recordVersion, before='saveClick')  @validator('beanValidator')"/>
+                                        </hlayout>
+                                    </div>
+                                </row>
+                                
+                                <row>
+                                    <div class="form-group row">
+                                        <n:label for="txtDefaultStatus" class="col-sm-1 control-label">Default Status</n:label>
+                                        <hlayout sclass="col-sm-5">
+                                            <checkbox sclass="form-control input-sm" disabled="@load(empty vm.selected)" 
+                                                      checked="@bind(vm.selected.defaultStatus) @save(vm.selected.defaultStatus, before='saveClick')  @validator('beanValidator')"/>
+                                        </hlayout>
+                                    </div>
+                                </row>
+                                
+                                <row>
+                                    <div class="form-group row">
+                                        <n:label for="txtVoidStatus" class="col-sm-1 control-label">Void Status</n:label>
+                                        <hlayout sclass="col-sm-5">
+                                            <checkbox sclass="form-control input-sm" disabled="@load(empty vm.selected)" 
+                                                      checked="@bind(vm.selected.voidStatus) @save(vm.selected.voidStatus, before='saveClick')  @validator('beanValidator')"/>
+                                        </hlayout>
+                                    </div>
+                                </row>
+                                
+                                <row>
+                                    <div class="form-group row">
+                                        <n:label for="txtVoidReason" class="col-sm-2 control-label">Void Reason</n:label>
+                                        <hlayout sclass="col-sm-2">
+                                            <textbox id="txtVoidReason" maxlength="30" sclass="form-control input-sm" hflex="1" 
+                                                     disabled="@load(empty vm.selected)" errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.voidReason) @save(vm.selected.voidReason, before='saveClick')  @validator('beanValidator')"/>
+                                        </hlayout>
+                                    </div>
+                                </row>
+                                
+                                <row>
+                                    <div class="form-group row">
+                                        <n:label for="txtCreateBy" class="col-sm-2 control-label">Create By</n:label>
+                                        <hlayout sclass="col-sm-2">
+                                            <textbox id="txtCreateBy" maxlength="30" sclass="form-control input-sm" hflex="1" 
+                                                     disabled="@load(empty vm.selected)" errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.createBy) @save(vm.selected.createBy, before='saveClick')  @validator('beanValidator')"/>
+                                        </hlayout>
+                                    </div>
+                                </row>
+                                
+                                <row>
+                                    <div class="form-group row">
+                                        <n:label for="txtLastModifiedBy" class="col-sm-2 control-label">Last Modified By</n:label>
+                                        <hlayout sclass="col-sm-2">
+                                            <textbox id="txtLastModifiedBy" maxlength="30" sclass="form-control input-sm" hflex="1" 
+                                                     disabled="@load(empty vm.selected)" errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.lastModifiedBy) @save(vm.selected.lastModifiedBy, before='saveClick')  @validator('beanValidator')"/>
+                                        </hlayout>
+                                    </div>
+                                </row>
+                                
+                                
+                                
+                                
+                            </rows>
+                        </grid>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            
+    </div>
+</zk>

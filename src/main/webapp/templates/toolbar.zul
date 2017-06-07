@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <div class="btn-toolbar">
+    <toolbar class="btn-group" hflex="1">
+        <toolbarbutton iconSclass="fa z-icon-file fa-2x" tooltiptext="New" class="btn btn-default"
+                       visible="@load(vm.addState.visible)" 
+                       disabled="@load(vm.addState.disabled)" 
+                       onClick="@command('addClick')"/>                                    
+        <toolbarbutton iconSclass="fa z-icon-trash fa-2x" tooltiptext="Delete" class="btn btn-danger"
+                       visible="@load(vm.delState.visible)"  
+                       disabled="@load(vm.delState.disabled)" 
+                       onClick="@command('deleteClick')"/>                        
+        <toolbarbutton iconSclass="fa z-icon-save fa-2x" tooltiptext="Save" class="btn btn-default"            
+                       visible="@load(vm.saveState.visible)"  
+                       disabled="@load(vm.saveState.disabled)" 
+                       onClick="@command('saveClick')" />                         
+        <toolbarbutton iconSclass="fa z-icon-times fa-2x" tooltiptext="Cancel" class="btn btn-default"
+                       visible="@load(vm.cancelState.visible)"  
+                       disabled="@load(vm.cancelState.disabled)" 
+                       onClick="@command('cancelClick')"/>                         
+        <toolbarbutton iconSclass="fa z-icon-folder fa-2x" tooltiptext="Browse" class="btn btn-default"
+                       visible="@load(vm.browseState.visible)"  
+                       disabled="@load(vm.browseState.disabled)" 
+                       onClick="@command('browseClick')"/>                                     
+        <toolbarbutton iconSclass="fa z-icon-info fa-2x" tooltiptext="Information" class="btn btn-default"
+                       visible="@load(vm.infoState.visible)"  
+                       disabled="@load(vm.infoState.disabled)" 
+                       onClick="@command('infoClick')"/>
+    </toolbar>
+    </div>
+    <div height="10px"></div>
+</zk>

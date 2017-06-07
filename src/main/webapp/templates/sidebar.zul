@@ -59,6 +59,10 @@
             <navitem label="Hak Akses" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Query Database', tabPath='profil perusahaan.zul')"/>
             <navitem label="Hak Akses" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Setting Aplikasi', tabPath='profil perusahaan.zul')"/>
         </nav>
+        <nav label="Ploychompoo" iconSclass="z-icon-home">
+            <navitem label="Geo Data" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Geo Data', tabPath='Ploychompoo/geoData.zul')"/>
+            
+        </nav>
     </navbar>
     <!-- Toggler -->
     <div sclass="sidebar-collapse">

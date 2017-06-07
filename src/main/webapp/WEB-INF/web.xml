@@ -1,35 +1,45 @@
-<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-
-     <!-- //// -->
-     <!-- ZK -->
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <description>Zk MVVM Crud</description>
+    <display-name>ZK MVVM CRUD</display-name>
+    
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:applicationContext.xml           
+        </param-value>
+    </context-param>    
+             
     <listener>
-        <description>ZK listener for cleanup when a session is destroyed</description>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>                        
+    </listener> 
+
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+                   
+    <listener>
+        <description>ZK listener for session cleanup</description>
         <listener-class>org.zkoss.zk.ui.http.HttpSessionListener</listener-class>
     </listener>
+    
+   
     <servlet>
-        <description>ZK loader for evaluating ZUML pages</description>
         <servlet-name>zkLoader</servlet-name>
         <servlet-class>org.zkoss.zk.ui.http.DHtmlLayoutServlet</servlet-class>
-        <!--
-            Must. Specifies URI of the update engine (DHtmlUpdateServlet). It
-            must be the same as <url-pattern> for the update engine.
-        -->
         <init-param>
             <param-name>update-uri</param-name>
             <param-value>/zkau</param-value>
         </init-param>
-        <load-on-startup>1</load-on-startup><!-- MUST -->
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>zkLoader</servlet-name>
-        <url-pattern>*.zul</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>zkLoader</servlet-name>
         <url-pattern>*.zhtml</url-pattern>
+        <url-pattern>*.zul</url-pattern>
+        <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <description>The asynchronous update engine for ZK</description>
         <servlet-name>auEngine</servlet-name>
@@ -39,24 +49,23 @@
         <servlet-name>auEngine</servlet-name>
         <url-pattern>/zkau/*</url-pattern>
     </servlet-mapping>
-     <!-- //// -->
- 
-     <!-- MIME mapping -->
+
+    <!-- [Optional] MIME mapping -->
+    <mime-mapping>
+        <extension>doc</extension>
+        <mime-type>application/vnd.ms-word</mime-type>
+    </mime-mapping>
     <mime-mapping>
         <extension>gif</extension>
         <mime-type>image/gif</mime-type>
-    </mime-mapping>
-    <mime-mapping>
-        <extension>html</extension>
-        <mime-type>text/html</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>htm</extension>
         <mime-type>text/html</mime-type>
     </mime-mapping>
     <mime-mapping>
-        <extension>jad</extension>
-        <mime-type>text/vnd.sun.j2me.app-descriptor</mime-type>
+        <extension>html</extension>
+        <mime-type>text/html</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>jpeg</extension>
@@ -68,7 +77,11 @@
     </mime-mapping>
     <mime-mapping>
         <extension>js</extension>
-        <mime-type>application/x-javascript</mime-type>
+        <mime-type>text/javascript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>pdf</extension>
+        <mime-type>application/pdf</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>png</extension>
@@ -77,6 +90,10 @@
     <mime-mapping>
         <extension>txt</extension>
         <mime-type>text/plain</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>xls</extension>
+        <mime-type>application/vnd.ms-excel</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>xml</extension>
@@ -90,7 +107,9 @@
         <extension>zul</extension>
         <mime-type>text/html</mime-type>
     </mime-mapping>
-    <welcome-file-list>
+  
+    <welcome-file-list>        
         <welcome-file>index.zul</welcome-file>
     </welcome-file-list>
+    
 </web-app>
