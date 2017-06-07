@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<?link rel="shortcut icon" href="/magnifier.ico" ?>-->
+<?page title="Event Data" contentType="text/html;charset=UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window id="windowbrowse" border="normal" width="90%" height="90%"
+            position="center" style="padding: 0px 3px 5px 3px;" closable="true" maximizable="false" minimizable="false"
+            mode="modal" shadow="false" sizable="true" onCancel="self.onClose();"
+            apply="org.zkoss.bind.BindComposer" 
+            validationMessages="@id('vmsgs')" viewModel="@id('vm') @init('com.lemonhexa.web.component.GeodataBrowseData')" >            
+        <caption id="caption" label="List Geodata | Browse Data" style="margin: 0px 0px 0px 10px;vertical-align: middle;padding:0px 15px 0px 0px;font-weight: bold;font-size: 10pt; font-family: Verdana, Arial, Helvetica, sans-serif;color:#333;"/>
+        <custom-attributes org.zkoss.zul.listbox.rod="true"/>
+        <custom-attributes org.zkoss.zul.listbox.initRodSize="13"/> 
+        <div class="row" >
+            <textbox id="txtAlias" style=" margin: 0px 0px 0px 15px;" 
+                             value="@bind(vm.looked)" onOK="@command('changeList')" placeholder="Search Here"/> 
+            <combobox id="cbsize" model="@load(vm.pageSize)" autodrop="true" 
+                      value="5" onChange="changeSize();" width="5%">
+                <template name="model" >
+                    <comboitem label="@load(each)" value="@load(each)" />
+                </template>
+            </combobox> 
+        </div>
+        <div class="row">
+            <div height="10px"></div>
+        </div>
+        
+        <div class="row" vflex="1">
+            <listbox id="listboxData" mold="paging" pageSize="5" fixedLayout="true" 
+                             hflex="1" vflex="1" model="@load(vm.geodata)" 
+                             selectedItem="@bind(vm.geodataSelected)" 
+                             onSelect="@command('listboxSelected',window=windowbrowse)">
+                <listhead sizable="true">                
+                    <listheader label="Global Record Id"  align="center" sort="auto" />
+                    <listheader label="District"  align="center" sort="auto" />                
+                    <listheader label="Regency" align="center" sort="auto" />                                              
+                </listhead>
+                <template name="model" var="data" status="s">
+                    <listitem>
+                        <listcell label="@load(data.globalRecordId)"/>
+                        <listcell label="@load(data.district)"/>       
+                        <listcell label="@load(data.country)"/>                  
+                    </listitem>
+                </template>
+            </listbox> 
+        </div>
+        <zscript>
+            public void changeSize() {
+            listboxData.setPageSize(cbsize.getSelectedItem().getValue());
+            }
+        </zscript>
+        
+    </window>        
+
+</zk>
+
