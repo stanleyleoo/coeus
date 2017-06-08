@@ -1,6 +1,10 @@
 .tabbox{
     width: 1339px;
 }
+
+.index{
+    background-color: #f0f0f0;
+}
 .z-tabpanel{
     padding:0;
     max-height: 685px;
