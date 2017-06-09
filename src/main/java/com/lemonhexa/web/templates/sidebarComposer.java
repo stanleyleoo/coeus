@@ -63,7 +63,7 @@ public class sidebarComposer extends SelectorComposer<Component>{
             calitem.setTooltip("calpp, position=end_center, delay=0");
             toggler.setIconSclass("z-icon-angle-double-left");
         } else {
-            sidebar.setSclass("sidebar sidebar-min");
+            sidebar.setSclass("sidebar-min");
             navbar.setCollapsed(true);
             calitem.setTooltip("");
             toggler.setIconSclass("z-icon-angle-double-right");

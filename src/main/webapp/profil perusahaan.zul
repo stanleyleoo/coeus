@@ -2,146 +2,166 @@
 
 <zk xmlns:n="native">
     <style dynamic="true">
-
-	<!-- cut/hide the vertical borders in the grid rows -->
-        .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid  { 
-            border: none;
-            overflow: hidden;
-            zoom: 1;
-            background: white;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            border-bottom: none; 
+        .right_col{
+            background-color: white;
         }
-        
-        .z-toolbar{
-            background: none;
-            background-color: #cff791;
-            height:50px;
-            width:100%;
-         }
+        .page-header{
+                margin-top:10px;
+            }
      </style>
-    <vlayout id="layoutWindow" apply="org.zkoss.bind.BindComposer"
+    <vlayout sclass="right_col" id="layoutWindow" apply="org.zkoss.bind.BindComposer"
 	height="100%" width="100%">
-        <div sclass="container-fluid">
-            <toolbar id="tb" sclass="toolbar">
-                <toolbarbutton image="/asset/images/toolbar-btn/add.png" onClick='alert("Add")' tooltiptext="Add"/>
-                <toolbarbutton image="/asset/images/toolbar-btn/browse.png" onClick='alert("Browse")' />
-                <toolbarbutton image="/asset/images/toolbar-btn/cancel.png" onClick='alert("Camcel")' />
-                <toolbarbutton image="/asset/images/toolbar-btn/del.png" onClick='alert("Delete")' />
-                <toolbarbutton image="/asset/images/toolbar-btn/info.png" onClick='alert("Info")' />
-                <toolbarbutton image="/asset/images/toolbar-btn/refresh.png" onClick='alert("Refresh")' />
-                <toolbarbutton image="/asset/images/toolbar-btn/save.png" onClick='alert("Save  ")' />
-            </toolbar> 
-            <div sclass="page-header">
-                <label value="Profil Perusahaan"/>
-                <a label="overview &amp; stats" iconSclass="z-icon-angle-double-right" sclass="subtitle"/>
+        <div sclass="row">
+            <div class="col-md-12 col-xs-12 col-lg-12">
+                <div sclass="page-header">
+                    <label value="Profil Perusahaan"/>
+                    <a label="overview &amp; stats" iconSclass="z-icon-angle-double-right" sclass="subtitle"/>
+                </div>
+                <include src="templates/toolbar.zul"/> 
+                <vlayout height="1" width="1" spacing="0" apply="org.zkoss.bind.BindComposer">
+                    <grid sclass="tblWithoutHover">
+                        <columns class="col-md-12">
+                            <column class="col-xs-12 col-md-12 col-lg-12"/>
+                        </columns>
+                        <rows>
+                            <row>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 control-label">Global Record ID</label>
+                                    <div class="col-sm-4">
+                                        <textbox id="GlobalRecordId" sclass="form-control input-sm" disabled="true"/>
+                                    </div>
+                                </div>
+                            </row>
+                            <row>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 control-label">Record ID</label>
+                                    <div class="col-sm-4">
+                                        <textbox id="RecordId" sclass="form-control input-sm" disabled="true"/>
+                                    </div>
+                                </div>
+                            </row>
+                            <row>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 control-label">Nama Perusahaan</label>
+                                    <div class="col-sm-4">
+                                        <textbox id="NamaPerusahaan" sclass="form-control input-sm" disabled="false"/>
+                                    </div>
+                                </div>
+                            </row>
+                        </rows>
+                    </grid>
+                </vlayout> 
+                <vlayout>   
+                <tabbox sclass="tabbox col-" hflex='1'>
+                    <tabs>
+                            <tab label="Halaman-1"/>
+                            <tab label="Halaman-2" />
+                            <tab label="Data Pajak" />
+                            <tab label="Data Manajemen Kredit" />
+                            <tab label="Data Contact Person" />
+                            <tab label="Data Faktur" />
+                            <tab label="Data Giro" />
+                    </tabs>
+                    <tabpanels>
+                            <!--Tab panel halaman 1-->
+                            <tabpanel>
+                                <grid>
+                                    <columns class="col-md-12">
+                                        <column class="col-xs-12 col-md-12 col-lg-12"/>
+                                    </columns>
+                                    <rows>
+                                        <row>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 control-label">Kelompok</label>
+                                                <div class="col-sm-3">
+                                                    <combobox id="kelompokSelectbox" sclass="input-sm">
+                                                        <comboitem label="Customer"></comboitem>
+                                                    </combobox>   
+                                                </div>
+                                            </div>
+                                        </row>
+                                        <row>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 control-label">Alamat</label>
+                                                <div class="col-sm-3">
+                                                     <textbox id="Alamat" rows="4" sclass="form-control input-sm" hflex="1"/>  
+                                                </div>
+                                                <label class="col-sm-2 control-label">Alamat</label>
+                                                <div class="col-sm-3">
+                                                     <textbox id="KodePos" sclass="form-control input-sm" hflex="1"/>  
+                                                </div>
+                                            </div>
+                                        </row>
+                                        <row>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 control-label">Data Geografis</label>
+                                                <div class="col-sm-3">
+                                                    <combobox id="DataGeografis" sclass="input-sm">
+                                                        <comboitem label="Customer"></comboitem>
+                                                    </combobox>   
+                                                </div>
+                                            </div>
+                                        </row>
+                                        <row>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 control-label">Kelompok Lokasi</label>
+                                                <div class="col-sm-3">
+                                                    <combobox id="KelompokLokasi" sclass="input-sm">
+                                                        <comboitem label="Customer"></comboitem>
+                                                    </combobox>   
+                                                </div>
+                                            </div>
+                                        </row>
+                                        <row>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 control-label">Telepon</label>
+                                                <div class="col-sm-3">
+                                                     <textbox id="Telepon" sclass="form-control input-sm" hflex="1"/>  
+                                                </div>
+                                                <label class="col-sm-2 control-label">Fax</label>
+                                                <div class="col-sm-3">
+                                                     <textbox id="Fax" sclass="form-control input-sm" hflex="1"/>  
+                                                </div>
+                                            </div>
+                                        </row>
+                                        <row>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 control-label">Website</label>
+                                                <div class="col-sm-3">
+                                                     <textbox id="Website" sclass="form-control input-sm" hflex="1"/>  
+                                                </div>
+                                                <label class="col-sm-2 control-label">Email</label>
+                                                <div class="col-sm-3">
+                                                     <textbox id="Email" sclass="form-control input-sm" hflex="1"/>  
+                                                </div>
+                                            </div>
+                                        </row>
+
+                                    </rows>
+
+                                </grid>
+                            </tabpanel>
+                            <!--END Tab panel halaman 1-->
+                            <!--tab panel halaman 2-->
+                            <tabpanel>
+                                    <grid>
+                                            <columns>
+                                                    <column label="This" />
+                                                    <column label="That" />
+                                            </columns>
+                                            <template name="model">
+                                                    <row>
+                                                            <label value="${each.this}" />
+                                                            <label value="${each.that}" />
+                                                    </row>
+                                            </template>
+                                    </grid>
+                            </tabpanel>
+                            <!--END tab panel halaman2-->
+                    </tabpanels>
+                </tabbox>  
+                </vlayout> 
             </div>
-            <vlayout height="1" width="1" spacing="0" apply="org.zkoss.bind.BindComposer">
-                <grid sclass="GridLayoutNoBorder">
-                    <columns>
-                        <column width="150px" sclass="col-xs-12"/>
-                        <column sclass="col-xs-12"/>
-                    </columns>
-                    <rows>
-                        <row style="background:#FFFFFF;">
-                            <label class="col-xs-12">Kode Perusahaan</label>
-                            <textbox id="kode_perusahaan" sclass="form-control col-xs-12" disabled="true" value=""/>
-                            <checkbox id="active" label="Active"/>
-                        </row>
-                        <row style="background:#FFFF;">
-                            <label class="col-xs-12">Nama Perusahaan</label>
-                            <textbox id="nama_perusahaan" sclass="form-control col-xs-12" disabled="true" value=""/>
-                        </row>
-                    </rows>
-                </grid>
-            </vlayout> 
-            <vlayout>   
-            <tabbox sclass="tabbox" hflex='1'>
-		<tabs>
-			<tab label="Halaman-1"/>
-			<tab label="Halaman-2" />
-                        <tab label="Data Pajak" />
-			<tab label="Data Manajemen Kredit" />
-                        <tab label="Data Contact Person" />
-			<tab label="Data Faktur" />
-                        <tab label="Data Giro" />
-		</tabs>
-		<tabpanels>
-                        <!--Tab panel halaman 1-->
-			<tabpanel>
-                            <grid>
-                                <columns>
-                                    <column width="150px" sclass="col-xs-12"/>
-                                    <column sclass="col-xs-12"/>
-                                    <column width="80px" sclass="col-xs-12"/>
-                                    <column sclass="col-xs-12"/>
-                                </columns>
-                                <rows>
-                                    <row style="background:#FFFF;">
-                                        Kelompok
-                                        <combobox id="kelompokSelectbox" width="200px">
-                                            <comboitem label="Customer"></comboitem>
-                                        </combobox>   
-                                    </row> 
-                                    <row style="background:#FFFF;">
-                                        Alamat
-                                        <textbox id="alamat" rows="4" width="300px"/>
-                                        Kode Pos
-                                        <textbox id="kodepos"/>
-                                    </row> 
-                                    <row style="background:#FFFF;">
-                                        Data Geografis
-                                        <combobox id="geoSelectbox" width="350px">
-                                            <comboitem label="Customer"></comboitem>
-                                        </combobox>   
-                                    </row>
-                                    <row style="background:#FFFF;">
-                                        Kelompok Lokasi
-                                        <combobox id="kelompoklokasiSelectbox" width="250px">
-                                            <comboitem label="Customer"></comboitem>
-                                        </combobox>   
-                                    </row>  
-                                    <row style="background:#FFFF;">
-                                        Telepon
-                                        <textbox width="200px"/>
-                                        Fax
-                                        <textbox width="200px"/>  
-                                    </row> 
-                                    <row style="background:#FFFF;">
-                                        Website
-                                        <textbox width="200px"/>  
-                                    </row>
-                                    <row style="background:#FFFF;">
-                                        Email
-                                        <textbox width="200px"/>
-                                    </row>
-                                    
-                                </rows>
-                                
-                            </grid>
-			</tabpanel>
-                        <!--END Tab panel halaman 1-->
-                        <!--tab panel halaman 2-->
-			<tabpanel>
-				<grid>
-					<columns>
-						<column label="This" />
-						<column label="That" />
-					</columns>
-					<template name="model">
-						<row>
-							<label value="${each.this}" />
-							<label value="${each.that}" />
-						</row>
-					</template>
-				</grid>
-			</tabpanel>
-                        <!--END tab panel halaman2-->
-		</tabpanels>
-            </tabbox>  
-            </vlayout> 
         </div>
     </vlayout>
 </zk>

@@ -2,83 +2,64 @@
 
 <zk xmlns:n="native">
 <style dynamic="true">
-
-	<!-- cut/hide the vertical borders in the grid rows -->
-        .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid  { 
-            border: none;
-            overflow: hidden;
-            zoom: 1;
-            background: white;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            border-bottom: none; 
+        .right_col{
+            background-color: white;
         }
-        
-        
-        .z-toolbar{
-            background: none;
-            background-color: #cff791;
-            height:50px;
-            width:100%;
-         }
+        .page-header{
+            margin-top:10px;
+        }
 </style>
-<vlayout id="layoutWindow" apply="org.zkoss.bind.BindComposer"
+<vlayout sclass="right_col" id="layoutWindow" apply="org.zkoss.bind.BindComposer"
 	height="100%" width="100%">
-        <div sclass="container-fluid">
-            <toolbar id="tb" sclass="toolbar">
-                <toolbarbutton image="/asset/images/toolbar-btn/add.png" onClick='alert("Add")' tooltiptext="Add"/>
-                <toolbarbutton image="/asset/images/toolbar-btn/browse.png" onClick='alert("Browse")' />
-                <toolbarbutton image="/asset/images/toolbar-btn/cancel.png" onClick='alert("Camcel")' />
-                <toolbarbutton image="/asset/images/toolbar-btn/del.png" onClick='alert("Delete")' />
-                <toolbarbutton image="/asset/images/toolbar-btn/info.png" onClick='alert("Info")' />
-                <toolbarbutton image="/asset/images/toolbar-btn/refresh.png" onClick='alert("Refresh")' />
-                <toolbarbutton image="/asset/images/toolbar-btn/save.png" onClick='alert("Save  ")' />
-            </toolbar> 
-            <div sclass="page-header">
+    <div sclass="row">
+        <div sclass="col-md-12 col-xs-12 col-lg-12">    
+            <div sclass="page-header col-md-12 col-xs-12">
                 <label value="Kategori Perusahaan"/>
                 <a label="overview &amp; stats" iconSclass="z-icon-angle-double-right" sclass="subtitle"/>
             </div>
+            <include src="templates/toolbar.zul"/>
             <vlayout height="1" width="1" spacing="0" apply="org.zkoss.bind.BindComposer">
-                <grid sclass="GridLayoutNoBorder">
-                    <columns>
-                        <column width="150px" sclass="col-xs-12"/>
-                        <column width="400px" sclass="col-xs-12"/>
-                        <column sclass="col-xs-12"/>
-                        <column sclass="col-xs-12"/>
+                <grid sclass="tblWithoutHover">
+                    <columns class="col-md-12">
+                        <column class="col-xs-12 col-md-12"/>
                     </columns>
                     <rows>
-                        <row style="background:#FFFFFF;">
-                            <label class="col-xs-12">Kode Kategori</label>
-                            <textbox id="kode_kategori" sclass="form-control col-xs-12" disabled="true" value=""/>
+                        <row>
+                            <div class="form-group row">
+                                <label class="col-sm-2 control-label">Record Id</label>
+                                <hlayout sclass="col-sm-2">
+                                    <textbox id="RecordId" sclass="form-control input-sm" hflex="1" disabled="true"/>
+                                </hlayout>
+                            </div>
                         </row>
-                        <row style="background:#FFFF;">
-                            <label class="col-xs-12">Nama Kategori</label>
-                            <textbox id="nama_perusahaan" sclass="form-control col-xs-12" disabled="false" value=""/>
+                        <row>
+                            <div class="form-group row">
+                                <label class="col-sm-2 control-label">Nama Category</label>
+                                <hlayout sclass="col-sm-2">
+                                    <textbox id="Category" sclass="form-control input-sm" hflex="1" disabled="false"/>
+                                </hlayout>
+                            </div>
                         </row>
-                        <row style="background:#FFFF;">
-                            <label class="col-xs-12">Sub 1</label>
-                            <textbox id="sub_1" sclass="form-control col-xs-12" disabled="false" value=""/>
+                        <row>
+                            <div class="form-group row">
+                                <label class="col-sm-2 control-label">Sub 1</label>
+                                <hlayout sclass="col-sm-2">
+                                    <textbox id="Sub1" sclass="form-control input-sm" hflex="1" disabled="false"/>
+                                </hlayout>
+                            </div>
                         </row>
-                        <row style="background:#FFFF;">
-                            <label class="col-xs-12">Sub 2</label>
-                            <textbox id="sub_2" sclass="form-control col-xs-12" disabled="false" value=""/>
-                        </row>
-                        <row style="background:#FFFF;">
-                            <label class="col-xs-12">Notes</label>
-                            <textbox id="notes" rows="3" sclass="form-control col-xs-12" disabled="false" value=""/>
-                        </row>
-                        <row style="background:#FFFF;">
-                            <checkbox label="Status"/>
-                            <checkbox label="Status"/>
-                        </row>
-                        <row style="background:#FFFF;">
-                            <label class="col-xs-12">Void_Reason</label>
-                            <textbox id="void_reason" rows="3" sclass="form-control col-xs-12" disabled="false" value=""/>
+                        <row>
+                            <div class="form-group row">
+                                <label class="col-sm-2 control-label">Sub 2</label>
+                                <hlayout sclass="col-sm-2">
+                                    <textbox id="Sub2" sclass="form-control input-sm" hflex="1" disabled="false"/>
+                                </hlayout>
+                            </div>
                         </row>
                     </rows>
                 </grid>
             </vlayout>
         </div>
+    </div>
 </vlayout>
 </zk>
