@@ -24,6 +24,8 @@ import org.zkoss.zk.ui.util.Clients;
 public class GeodataVm extends Toolbar{
     private Geodata selected;
     private List<Geodata> lists;
+    Integer globalRecordId = 1;
+    Integer recordVersion = 0;
     
     public GeodataVm(){
         
@@ -65,15 +67,27 @@ public class GeodataVm extends Toolbar{
             }
         } else {
             Clients.showNotification("Record not found.");
-            super.editClick();
         }
     }
 
     @Command
     @Override
     @NotifyChange({"selected"})
-    public void saveClick() {
-        try {
+    public void saveClick() {  
+        try {    
+            if(getSelected().getRecordId() == null){
+                if(getSelected() != null){
+                    getSelected().setGlobalRecordId("A00" + globalRecordId);
+                    getSelected().setRecordVersion(recordVersion);
+                    globalRecordId++;
+                }else{
+                    System.out.println("gak tau");
+                }
+            }else{
+                recordVersion++;
+                getSelected().setRecordVersion(recordVersion);
+            }
+            
             if(AppUtil.getWebService().save(getSelected())) {
                 setSelected(null);
                 super.saveClick();
@@ -82,7 +96,6 @@ public class GeodataVm extends Toolbar{
         } catch (Exception e) {
             Clients.showNotification("Save failed.\n" + e.getLocalizedMessage());
         }
-        super.saveClick();
     }
 
     @Command

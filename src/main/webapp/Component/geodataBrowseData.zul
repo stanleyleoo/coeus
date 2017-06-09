@@ -11,8 +11,8 @@
         <custom-attributes org.zkoss.zul.listbox.rod="true"/>
         <custom-attributes org.zkoss.zul.listbox.initRodSize="13"/> 
         <div class="row" >
-            <textbox id="txtAlias" style=" margin: 0px 0px 0px 15px;" 
-                             value="@bind(vm.looked)" onOK="@command('changeList')" placeholder="Search Here"/> 
+            <textbox id="txtAlias" instant="true" style=" margin: 0px 0px 0px 15px;" 
+                             value="@bind(vm.looked)" onChange="@command('changeList')" placeholder="Search Here"/> 
             <combobox id="cbsize" model="@load(vm.pageSize)" autodrop="true" 
                       value="5" onChange="changeSize();" width="5%">
                 <template name="model" >
@@ -29,16 +29,99 @@
                              hflex="1" vflex="1" model="@load(vm.geodata)" 
                              selectedItem="@bind(vm.geodataSelected)" 
                              onSelect="@command('listboxSelected',window=windowbrowse)">
-                <listhead sizable="true">                
-                    <listheader label="Global Record Id"  align="center" sort="auto" />
-                    <listheader label="District"  align="center" sort="auto" />                
-                    <listheader label="Regency" align="center" sort="auto" />                                              
+                <auxhead>
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%"  />
+                    </auxheader>
+                    
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%"  
+					 />
+                    </auxheader>
+                    
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%"  
+					 />
+                    </auxheader>
+                    
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%" value="@bind(vm.filter.province)" onChange="@command('changeListSplit')"
+					 />
+                    </auxheader>
+                    
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%" value="@bind(vm.filter.country)" onChange="@command('changeListSplit')"  
+					 />
+                    </auxheader>
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%"  
+					 />
+                    </auxheader>
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%"  
+					 />
+                    </auxheader>
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%"  
+					 />
+                    </auxheader>
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%"  
+					 />
+                    </auxheader>
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%"  
+					 />
+                    </auxheader>
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%"  
+					 />
+                    </auxheader>
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%"  
+					 />
+                    </auxheader>
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%"  
+					 />
+                    </auxheader>
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%"  
+					 />
+                    </auxheader>
+                </auxhead>
+                <listhead sizable="true" menupopup="auto">                
+                    <listheader label="Global Record Id" visible="false" align="center" sort="auto(globalRecordId)" />
+                    <listheader label="District"  align="center" sort="auto(district)" />                
+                    <listheader label="Regency" align="center" sort="auto(regency)" /> 
+                    <listheader label="Province"  align="center" sort="auto(province)" />
+                    <listheader label="Country"  align="center" sort="auto(country)" />                
+                    <listheader label="Note" visible="false" align="center" sort="auto(note)" />                                              
+                    <listheader label="Record Version" visible="false" align="center" sort="auto(recordVersion)" />  
+                    <listheader label="Default Status" visible="false" align="center" sort="auto(defaultStatus)" />
+                    <listheader label="Void Status" visible="false" align="center" sort="auto(voidStatus)" />                
+                    <listheader label="Void Reason" visible="false" align="center" sort="auto(voidReason)" /> 
+                    <listheader label="Create Datetime" visible="false" align="center" sort="auto(createDatetime)" />
+                    <listheader label="Create By" visible="false" align="center" sort="auto(createBy)" />                
+                    <listheader label="Last Modified Datetime" visible="false" align="center" sort="auto(lastModifiedDatetime)" />                                              
+                    <listheader label="Last Modified By" visible="false" align="center" sort="auto(lastModifiedBy)" />                                              
                 </listhead>
                 <template name="model" var="data" status="s">
                     <listitem>
                         <listcell label="@load(data.globalRecordId)"/>
                         <listcell label="@load(data.district)"/>       
-                        <listcell label="@load(data.country)"/>                  
+                        <listcell label="@load(data.regency)"/>
+                        <listcell label="@load(data.province)"/>
+                        <listcell label="@load(data.country)"/>       
+                        <listcell label="@load(data.note)"/>
+                        <listcell label="@load(data.recordVersion)"/>
+                        <listcell label="@load(data.defaultStatus)"/>       
+                        <listcell label="@load(data.voidStatus)"/>
+                        <listcell label="@load(data.voidReason)"/>
+                        <listcell label="@load(data.createDatetime)"/>       
+                        <listcell label="@load(data.createBy)"/>                  
+                        <listcell label="@load(data.lastModifiedDatetime)"/>
+                        <listcell label="@load(data.lastModifiedBy)"/>
                     </listitem>
                 </template>
             </listbox> 

@@ -6,10 +6,12 @@
 package com.lemonhexa.web.component;
 
 import com.lemonhexa.web.entity.Geodata;
+import com.lemonhexa.web.component.filter.GeodataFilter;
 import com.lemonhexa.web.helper.AppUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.zkoss.bind.BindUtils;
@@ -31,6 +33,7 @@ public class GeodataBrowseData {
     private Geodata geodataSelected;
     private String looked;
     private List<Integer> pageSize;
+    private GeodataFilter filter = new GeodataFilter();
 
     @Init
     public void init() {
@@ -53,9 +56,31 @@ public class GeodataBrowseData {
     public void changeList() {
         setGeodata(new ListModelList<>(getFilterGeodata(getLooked())));
     }
+    
+    @Command
+    @NotifyChange({"geodata"})
+    public void changeListSplit() {
+        setGeodata(new ListModelList<>(getFilterGeodataSplit(getFilter())));
+    }
+    
+    public static List<Geodata> getFilterGeodataSplit(GeodataFilter filter){
+        List<Geodata> data = new ArrayList<>();
+        List<Geodata> geodata = AppUtil.getWebService().getGeodatas();
+        String province = filter.getProvince().toLowerCase();
+        String country = filter.getCountry().toLowerCase();
 
+        for (Iterator<Geodata> i = geodata.iterator(); i.hasNext();) {
+            Geodata tmp = i.next();
+            if (tmp.getProvince().toLowerCase().contains(province) && tmp.getCountry().toLowerCase().contains(country)
+                    ) {
+                data.add(tmp);
+            }
+
+        }
+        return data;
+    }
+    
     public static List<Geodata> getFilterGeodata(String geodataFilter) {
-
         List<Geodata> geodatalist = new ArrayList<>();
         geodataFilter = geodataFilter.toLowerCase();
         List<Geodata> geodata = AppUtil.getWebService().getGeodatas();
@@ -63,11 +88,24 @@ public class GeodataBrowseData {
             return geodata;
         }
         
+        for (Iterator<Geodata> i = geodata.iterator(); i.hasNext();) {
+            Geodata tmp = i.next();
+            if (tmp.getCountry().contains(geodataFilter)
+                    || tmp.getProvince().contains(geodataFilter)) {
+                geodatalist.add(tmp);
+            }
+
+        }
         return geodatalist;
     }
     
     
+    public GeodataFilter getFilter() {
+        return filter;
+    }
+
     //getter & setter
+
     public ListModelList<Geodata> getGeodata() {
         return geodata;
     }

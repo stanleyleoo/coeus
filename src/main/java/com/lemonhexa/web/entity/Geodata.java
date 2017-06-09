@@ -13,6 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -36,89 +38,63 @@ public class Geodata implements Serializable {
     @Column(name = "recordId")
     private Integer recordId;
     
+    @Size(max = 100)
+    @Column(name = "country")
+    private String country;
+    
+    @Size(max = 45)
+    @Column(name = "createBy")
+    private String createBy;
+    
+    @Column(name = "createDatetime")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createDatetime = new Date();
+    
+    @Column(name = "defaultStatus")
+    private Boolean defaultStatus;
+    
+    @Column(name = "deleteStatus")
+    private Boolean deleteStatus;
+    
+    @Size(max = 100)
+    @Column(name = "district")
+    private String district;
+    
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45)
     @Column(name = "globalRecordId")
     private String globalRecordId;
     
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
-    @Column(name = "district")
-    private String district;
+    @Size(max = 45)
+    @Column(name = "lastModifiedBy")
+    private String lastModifiedBy;
     
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
-    @Column(name = "regency")
-    private String regency;
-    
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
-    @Column(name = "province")
-    private String province;
-    
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
-    @Column(name = "country")
-    private String country;
-    
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 200)
-    @Column(name = "note")
-    private String note;
-    
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "recordVersion")
-    private int recordVersion;
-    
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "defaultStatus")
-    private boolean defaultStatus;
-    
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "voidStatus")
-    private boolean voidStatus;
-    
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
-    @Column(name = "voidReason")
-    private String voidReason;
-    
-    @Basic(optional = false)
-    @Column(name = "createDatetime")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createDatetime = new Date();
-    
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 45)
-    @Column(name = "createBy")
-    private String createBy;
-    
-    @Basic(optional = false)
     @Column(name = "lastModifiedDatetime")
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastModifiedDatetime = new Date();
     
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 45)
-    @Column(name = "lastModifiedBy")
-    private String lastModifiedBy;
+    @Size(max = 200)
+    @Column(name = "note")
+    private String note;
     
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "deleteStatus")
-    private boolean deleteStatus = false;
+    @Size(max = 100)
+    @Column(name = "province")
+    private String province;
+    
+    @Column(name = "recordVersion")
+    private Integer recordVersion;
+    
+    @Size(max = 100)
+    @Column(name = "regency")
+    private String regency;
+    
+    @Size(max = 50)
+    @Column(name = "voidReason")
+    private String voidReason;
+    
+    @Column(name = "voidStatus")
+    private Boolean voidStatus;
 
     public Geodata() {
     }
@@ -131,92 +107,12 @@ public class Geodata implements Serializable {
         this.recordId = recordId;
     }
 
-    public String getGlobalRecordId() {
-        return globalRecordId;
-    }
-
-    public void setGlobalRecordId(String globalRecordId) {
-        this.globalRecordId = globalRecordId;
-    }
-
-    public String getDistrict() {
-        return district;
-    }
-
-    public void setDistrict(String district) {
-        this.district = district;
-    }
-
-    public String getRegency() {
-        return regency;
-    }
-
-    public void setRegency(String regency) {
-        this.regency = regency;
-    }
-
-    public String getProvince() {
-        return province;
-    }
-
-    public void setProvince(String province) {
-        this.province = province;
-    }
-
     public String getCountry() {
         return country;
     }
 
     public void setCountry(String country) {
         this.country = country;
-    }
-
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
-
-    public int getRecordVersion() {
-        return recordVersion;
-    }
-
-    public void setRecordVersion(int recordVersion) {
-        this.recordVersion = recordVersion;
-    }
-
-    public boolean isDefaultStatus() {
-        return defaultStatus;
-    }
-
-    public void setDefaultStatus(boolean defaultStatus) {
-        this.defaultStatus = defaultStatus;
-    }
-
-    public boolean isVoidStatus() {
-        return voidStatus;
-    }
-
-    public void setVoidStatus(boolean voidStatus) {
-        this.voidStatus = voidStatus;
-    }
-
-    public String getVoidReason() {
-        return voidReason;
-    }
-
-    public void setVoidReason(String voidReason) {
-        this.voidReason = voidReason;
-    }
-
-    public Date getCreateDatetime() {
-        return createDatetime;
-    }
-
-    public void setCreateDatetime(Date createDatetime) {
-        this.createDatetime = createDatetime;
     }
 
     public String getCreateBy() {
@@ -227,12 +123,44 @@ public class Geodata implements Serializable {
         this.createBy = createBy;
     }
 
-    public Date getLastModifiedDatetime() {
-        return lastModifiedDatetime;
+    public Date getCreateDatetime() {
+        return createDatetime;
     }
 
-    public void setLastModifiedDatetime(Date lastModifiedDatetime) {
-        this.lastModifiedDatetime = lastModifiedDatetime;
+    public void setCreateDatetime(Date createDatetime) {
+        this.createDatetime = createDatetime;
+    }
+
+    public Boolean getDefaultStatus() {
+        return defaultStatus;
+    }
+
+    public void setDefaultStatus(Boolean defaultStatus) {
+        this.defaultStatus = defaultStatus;
+    }
+
+    public Boolean getDeleteStatus() {
+        return deleteStatus;
+    }
+
+    public void setDeleteStatus(Boolean deleteStatus) {
+        this.deleteStatus = deleteStatus;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getGlobalRecordId() {
+        return globalRecordId;
+    }
+
+    public void setGlobalRecordId(String globalRecordId) {
+        this.globalRecordId = globalRecordId;
     }
 
     public String getLastModifiedBy() {
@@ -243,12 +171,61 @@ public class Geodata implements Serializable {
         this.lastModifiedBy = lastModifiedBy;
     }
 
-    public boolean isDeleteStatus() {
-        return deleteStatus;
+    public Date getLastModifiedDatetime() {
+        return lastModifiedDatetime;
     }
 
-    public void setDeleteStatus(boolean deleteStatus) {
-        this.deleteStatus = deleteStatus;
+    public void setLastModifiedDatetime(Date lastModifiedDatetime) {
+        this.lastModifiedDatetime = lastModifiedDatetime;
     }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public Integer getRecordVersion() {
+        return recordVersion;
+    }
+
+    public void setRecordVersion(Integer recordVersion) {
+        this.recordVersion = recordVersion;
+    }
+
+    public String getRegency() {
+        return regency;
+    }
+
+    public void setRegency(String regency) {
+        this.regency = regency;
+    }
+
+    public String getVoidReason() {
+        return voidReason;
+    }
+
+    public void setVoidReason(String voidReason) {
+        this.voidReason = voidReason;
+    }
+
+    public Boolean getVoidStatus() {
+        return voidStatus;
+    }
+
+    public void setVoidStatus(Boolean voidStatus) {
+        this.voidStatus = voidStatus;
+    }
+
     
 }
