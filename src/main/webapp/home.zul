@@ -9,7 +9,8 @@
 
 <!-- Unmark if we want to use fonts from google server
 <?link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'?>
---> <?link href="css/index.css.dsp" rel="stylesheet" type="text/css"?>
+--> 
+<!--<?link href="css/index.css.dsp" rel="stylesheet" type="text/css"?>-->
 <?link href="css/templates/navbar.css" rel="stylesheet" type="text/css"?>
 <?link href="css/templates/sidebar.css" rel="stylesheet" type="text/css"?>
 <?link href="css/templates/home.css" rel="stylesheet" type="text/css"?>
