@@ -9,15 +9,18 @@ and open the template in the editor.
 */
 
 .sidebar {
+  height:90.8vh;
   width: 189px;
   float: left; 
   position: relative;
   border: 1px solid #cccccc;
   border-width: 0 1px 0 0;
-  background-color: #ff6600;
+  background-color: #68696d;
 }
 .sidebar-min{
-    width: 43px;    
+    width: 43px; 
+    height: 100vh;
+    background-color: #68696d;
 }
 .z-nav-content > [class*="icon-"], .z-navitem-content > [class*="icon-"], .z-navitem-content > [class*="fa-"]{
     float: right;
@@ -73,12 +76,14 @@ and open the template in the editor.
   height: 38px;
   line-height: 36px;
   padding: 0 16px 0 7px;
-  background-color: #666666;
-  color: white;
+  background-color: #68696d;
+  color: #e5e6e8;
   text-shadow: none !important;
   font-size: 13px;
   text-decoration: none;
 }
+
+/* warna z-icon sidebar*/
 .nav-list.z-navbar > ul > li > a > [class*="z-icon-"] {
   display: inline-block;
   vertical-align: middle;
@@ -87,11 +92,6 @@ and open the template in the editor.
   font-size: 18px;
   margin-right: 2px;
   height: auto;
-}
-/*sidebar "ACTIVE"*/
-.nav-list.z-navbar > ul > li > a:focus {
-  background-color: #666666;
-  color: white;
 }
 
 /*border kiri saat hover*/
@@ -106,22 +106,22 @@ and open the template in the editor.
   max-width: 3px;
   height: auto;
   overflow: hidden;
-  background-color: #666666;
+  background-color: #f98901;
 }
 .nav-list.z-navbar > ul > .z-nav > ul {
   border-top: none;
   
 }
-/*warna menu*/
+/*warna menu saat dibuka*/
 .nav-list.z-navbar > ul > .z-nav-open > a,
 .nav-list.z-navbar > ul > .z-nav-open > a:hover,
 .nav-list.z-navbar > ul > .z-nav-open > a:focus {
-  background-color: white;
-  color:#666666;
+  background-color: #eceae7;
+  color: #68696d;
 }
-.nav-list.z-navbar > ul .z-nav-selected > .z-nav-content {
-  background-color: white;
-}
+/*.nav-list.z-navbar > ul .z-nav-selected > .z-nav-content {
+  background-color: red;
+}*/
 .nav-list.z-navbar > ul .z-nav-selected > .z-nav-content > .z-nav-text {
   color: #666666;
 }
@@ -142,12 +142,13 @@ and open the template in the editor.
   top: -1px;
   bottom: 0;
   z-index: 1;
-  border: 2px solid #666666;
+  border: 2px solid #5d5e62;
   border-width: 0 2px 0 0;
 }
+/*panah kanan <*/
 .nav-list.z-navbar > ul .z-nav-selected > .z-nav-content:after,
 .nav-list.z-navbar > ul .z-navitem-selected > .z-navitem-content:after {
-  display: block;
+  display: none;
   content: "";
   position: absolute !important;
   right: 0;
@@ -159,22 +160,23 @@ and open the template in the editor.
 .nav-list.z-navbar > ul .z-nav-selected.z-nav-open > .z-nav-content:after {
   display: none;
 }
-.nav-list.z-navbar > ul .z-navitem-selected {
+/*.nav-list.z-navbar > ul .z-navitem-selected {
   background-color: red;
-}
+}*/
 
 /*sidebar tulisan */
 .nav-list.z-navbar > ul .z-navitem-selected > .z-navitem-content,
 .nav-list.z-navbar > ul .z-navitem-selected > .z-navitem-content:hover,
 .nav-list.z-navbar > ul .z-navitem-selected > .z-navitem-content:focus {
-  background-color: white;
-  color: #666666;
+  background-color: #68696d;
+  color: #e5e6e8;
 }
 .nav-list.z-navbar > ul .z-navitem-selected > .z-navitem-content > .z-navitem-text {
   font-size: 13px;
 }
 .nav-list.z-navbar > ul .z-navitem-selected > .z-navitem-content:hover:before {
   display: none;
+  background-color: red;
 }
 
 /*kotak sidebar
@@ -212,8 +214,8 @@ kotak sidebar
 }
 
 .sidebar-collapse {
-  border-bottom: 1px solid #e0e0e0;
-  background-color: #f3f3f3;
+  border: none;
+  background-color: transparent;
   text-align: center;
   padding: 3px 0;
   position: relative;
@@ -221,7 +223,7 @@ kotak sidebar
 .sidebar-collapse > a [class*="z-icon"] {
   display: inline-block;
   font-size: 14px;
-  color: #aaaaaa;
+  color: #a4a5a7;
   border: 1px solid #bbbbbb;
   padding: 0 5px;
   line-height: 18px;
@@ -244,14 +246,13 @@ kotak sidebar
 /*Tulisan pas dropdown*/
 .nav-list.z-navbar > ul > .z-nav > ul > li a,
 .z-nav-popup > li a {
-  background-color: white;
+  background-color: #d2d4d3;
   line-height: normal;
   display: block;
-  color: #666666;
+  color: #68696d;
   padding: 7px 0 9px 37px;
   margin: 0;
   border: 0;
-/*  border-top: 1px dotted #e4e4e4;*/
 }
 
 .nav-list.z-navbar > ul > .z-nav > ul > li:before,
@@ -281,7 +282,7 @@ kotak sidebar
   z-index: 1;
   background-color: #FFF;
 }
-
+ /*panah kiri saat hover dropdown*/
 .nav-list.z-navbar > ul > .z-nav > ul > li:hover > a > i,
 .z-nav-popup > li:hover > a > i,
 .nav-list.z-navbar > ul > .z-nav > ul > .z-nav-selected > a > i,
@@ -289,6 +290,8 @@ kotak sidebar
 .nav-list.z-navbar > ul > .z-nav > ul > .z-navitem-selected > a > i,
 .z-nav-popup > .z-navitem-selected > a > i {
   display: inline-block;
+  color: #c1c2c4;
+  
 }
 
 /*.nav-list.z-navbar > ul > .z-nav > ul .z-navitem-selected > .z-navitem-content,
@@ -297,13 +300,13 @@ kotak sidebar
 .z-nav-popup .z-navitem-selected > .z-navitem-content:hover,
 .nav-list.z-navbar > ul > .z-nav > ul .z-navitem-selected > .z-navitem-content:focus,
 .z-nav-popup .z-navitem-selected > .z-navitem-content:focus {
-  background-color: #ffffff;
+  background-color: red;
   color: #fec35d;
-}*/
+}
 
 .z-nav-popup .z-nav-content, .z-nav-popup .z-navitem-content, .z-nav-popup .z-navseparator{
-    background: #ffffff;
-}
+    background: red;
+}*/
 
 .nav-list.z-navbar > ul > .z-nav > ul:before,
 .z-nav-popup:before {
@@ -332,7 +335,7 @@ kotak sidebar
   -webkit-font-smoothing: antialiased;
   *margin-right: .3em;
   font-size: 18px;
-  color: white;
+  color: #a4a5a7;
   content: "\f107";
   position: absolute;
   display: inline-block;
@@ -343,3 +346,24 @@ kotak sidebar
   padding: 0;
 }
 
+.nav-list.z-navbar > ul > li > a:hover {
+  background-color: #dcdcdc;
+  color: #585858;
+}
+.nav-list.z-navbar > ul > .z-nav-open > a {
+  color: #1963aa;
+}
+.nav-list.z-navbar > ul > li > a:focus {
+ background-color: #484643;
+  color: #fafafa;
+}
+.nav-list.z-navbar > ul > .z-nav-open > a:hover,
+.nav-list.z-navbar > ul > .z-nav-open > a:focus {
+  background-color: #484643;
+    color: #fafafa;
+
+}
+/*// untuk border tiap list sidebar*/
+.nav-list.z-navbar > ul > li{
+    border-top: 0px solid #FCFCFC;
+}
