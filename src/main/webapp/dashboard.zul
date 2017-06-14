@@ -1,7 +1,78 @@
-<vlayout sclass="page-content" xmlns:n="native" spacing="0">
-  <div sclass="page-header">
-    <label value="Dashboard"/>
-    <a label="overview &amp; stats" iconSclass="z-icon-angle-double-right" sclass="subtitle"/>
-  </div>
-  
+<zk xmlns:n="native">
+<style dynamic="true">
+        .right-col{
+            background-color: white;
+        }
+        .page-header{
+            margin-top:10px;
+        }
+        .z-panel{
+            margin-bottom:20px;
+        }
+</style>
+<vlayout sclass="right-col" id="layoutWindow" spacing="0" apply="org.zkoss.bind.BindComposer"
+	height="100%" width="100%">
+    <div sclass="row">
+        <div sclass="col-md-12 col-xs-12 col-lg-12">
+            <div sclass="page-header col-md-12 col-xs-12">
+              <label value="Dashboard"/>
+              <a label="overview &amp; stats" iconSclass="z-icon-angle-double-right" sclass="subtitle"/>
+            </div>
+            <div sclass="row container-fluid">
+                <div sclass="col-md-3 col-xs-12">
+                    <panel>
+                        <panelchildren style="background:#673bb7;color:white;">
+                            <n:center>
+                                <n:h3>$ TOTAL SALES</n:h3>
+                                <n:h2>1000</n:h2>
+                                <div sclass="col-md-12" style="background-color:#502ca6;color:white;">
+                                    <n:h6>ths </n:h6>
+                                </div>
+                            </n:center>
+                        </panelchildren>
+                    </panel>   
+                </div>
+                <div sclass="col-md-3 col-xs-12">
+                    <panel>
+                        <panelchildren style="background:#673bb7;color:white;">
+                            <n:center>
+                                <n:h3>$ TOTAL SALES</n:h3>
+                                <n:h2>1000</n:h2>
+                                <div sclass="col-md-12" style="background-color:#502ca6;color:white;">
+                                    <n:h6>ths </n:h6>
+                                </div>
+                            </n:center>
+                        </panelchildren>
+                    </panel>   
+                </div>       
+                <div sclass="col-md-3 col-xs-12">
+                    <panel>
+                        <panelchildren style="background:#673bb7;color:white;">
+                            <n:center>
+                                <n:h3>$ TOTAL SALES</n:h3>
+                                <n:h2>1000</n:h2>
+                                <div sclass="col-md-12" style="background-color:#502ca6;color:white;">
+                                    <n:h6>ths </n:h6>
+                                </div>
+                            </n:center>
+                        </panelchildren>
+                    </panel>   
+                </div>       
+                <div sclass="col-md-3 col-xs-12">
+                    <panel>
+                        <panelchildren style="background:#673bb7;color:white;">
+                            <n:center>
+                                <n:h3>$ TOTAL SALES</n:h3>
+                                <n:h2>1000</n:h2>
+                                <div sclass="col-md-12" style="background-color:#502ca6;color:white;">
+                                    <n:h6>ths </n:h6>
+                                </div>
+                            </n:center>
+                        </panelchildren>
+                    </panel>   
+                </div>               
+            </div>
+        </div>
+    </div>
 </vlayout>
+</zk>

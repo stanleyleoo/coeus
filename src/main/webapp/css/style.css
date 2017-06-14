@@ -18,7 +18,7 @@ body{
     margin-top: 20vh;
 }
 .login-left h4{
-    color:#e81062;
+    color:#e31289;
     font-weight: bold;
     width: 60vh;
     text-align: center;
@@ -26,7 +26,7 @@ body{
 }
 .login-right{
     height: 100vh;
-    background: url('../asset/images/background.jpg') center;
+    background: #cf167b;
 }
 .login-right h3{
     font-size: 30px;
@@ -58,18 +58,26 @@ body{
     border-radius: 3vh;
     color:white;
     border:2px solid white;
-    background: #e81062;   
+    background: #cf167b;   
    font-weight: bold;
    margin-top: 4vh;
 }
 .login-btn:hover{
     background:white;
-    color:#e81062;
+    color:#cf167b;
     transition: 0.3s ease;
 }
 .footer{
-    margin-top:20vh;
+    margin-top:3vh;
     color:white;
+}
+.footer p:first-child{
+    font-size: 100px;
+    color:white;
+    font-weight: bolder;
+}
+.footer p:last-child{
+    padding-top:-20vh;
 }
 
 @media only screen 

@@ -10,10 +10,11 @@
 <!-- Unmark if we want to use fonts from google server
 <?link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'?>
 --> 
-<!--<?link href="css/index.css.dsp" rel="stylesheet" type="text/css"?>-->
+<?link href="css/index.css.dsp" rel="stylesheet" type="text/css"?>
 <?link href="css/templates/navbar.css" rel="stylesheet" type="text/css"?>
 <?link href="css/templates/sidebar.css" rel="stylesheet" type="text/css"?>
 <?link href="css/templates/home.css" rel="stylesheet" type="text/css"?>
+<?link href="css/templates/toolbar.css" rel="stylesheet" type="text/css"?>
 <zk xmlns="http://www.zkoss.org/2005/zul">
     <div class="index" id="index" width="100%" height="100%"
             apply="org.zkoss.bind.BindComposer" 
@@ -23,7 +24,7 @@
         <hlayout id='main' spacing='0'>
             <include src="templates/sidebar.zul"/>
             <vlayout class="tabbox">
-                <tabbox model="@load(vm.tabsModel)" hflex="1" >
+                <tabbox model="@load(vm.tabsModel)" hflex="1" sclass="mainmenu">
                     <template name="model:tab" var="detail">
                         <tab label="@load(detail.title)" vflex="1" closable="true" onClose="@command('closeTab', tabToClose=detail)"/>
                     </template>

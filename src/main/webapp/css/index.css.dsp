@@ -706,16 +706,8 @@ a:focus {
   border: 0;
   border-top: 1px dotted #e4e4e4;
 }
-.nav-list.z-navbar > ul > .z-nav > ul > li a:focus,
-.z-nav-popup > li a:focus {
-  text-decoration: none;
-}
-.nav-list.z-navbar > ul > .z-nav > ul > li a:hover,
-.z-nav-popup > li a:hover {
-  text-decoration: none;
-  color: #4b88b7;
-  background-color: #ffffff !important;
-}
+
+
 .nav-list.z-navbar > ul > .z-nav > ul > li a img,
 .z-nav-popup > li a img {
   display: none;

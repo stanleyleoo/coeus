@@ -15,7 +15,7 @@
     <n:link href="css/style.css" rel="stylesheet"/>
         <div sclass="login-left col-md-6 col-xs-12">
             <vbox align="center" hflex="1" vflex="1" pack="center">
-            <image class="logo" src="asset/images/zklogo.png" align="center"/>
+            <image class="logo" src="asset/images/coeus-login.jpg" align="center"/>
             <n:h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</n:h4>
@@ -32,6 +32,7 @@
                     <n:p>forgot password? <n:a>Reset</n:a></n:p> 
                 </div>  
                 <div sclass="footer">
+                    <n:p>. .</n:p>
                     <n:p>Copyright &#169;2017 LemonHexa</n:p>
                 </div>
             </vbox>

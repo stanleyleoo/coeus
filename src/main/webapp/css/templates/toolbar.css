@@ -1,0 +1,28 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 14, 2017, 1:47:14 PM
+    Author     : Stanley
+*/
+
+ .z-toolbar-selected,.z-toolbar a:visited{
+    background-color:transparent;
+    border:0 none;
+}
+.tb{
+    background: #2b2950;    
+}
+.z-toolbarbutton [class*="z-icon-"]{
+    color:lightgrey;
+}
+.z-toolbar a{
+    background:transparent;
+    border:none;
+}
+.z-toolbar a:hover{
+    background: darkblue;
+    color:#2b2950;
+}

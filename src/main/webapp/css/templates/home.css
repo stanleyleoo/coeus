@@ -18,3 +18,11 @@
     padding:0;
     margin: 0 auto;
 }
+.z-textbox{
+    border:1px solid #2b2950;
+    background: transparent;
+}
+.listbox{
+    border:1px solid #2b2950;
+    background: transparent;
+}

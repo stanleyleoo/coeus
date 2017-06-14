@@ -2,7 +2,7 @@
 
 <zk xmlns="http://www.zkoss.org/2005/zul">
     <div class="btn-toolbar">
-    <toolbar class="btn-group" hflex="1">
+    <toolbar sclass="btn-group tb" hflex="1">
         <toolbarbutton iconSclass="fa z-icon-file fa-2x" tooltiptext="New" class="btn btn-default"
                        visible="@load(vm.addState.visible)" 
                        disabled="@load(vm.addState.disabled)" 

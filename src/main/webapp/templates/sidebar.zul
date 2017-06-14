@@ -56,8 +56,8 @@
         <nav label="Konfigurasi" iconSclass="z-icon-gear">
             <navitem label="Hak Akses" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Hak Akses', tabPath='profil perusahaan.zul')"/>
             <navitem label="Profil Pemakai" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Pemakai', tabPath='profil perusahaan.zul')"/>
-            <navitem label="Hak Akses" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Query Database', tabPath='profil perusahaan.zul')"/>
-            <navitem label="Hak Akses" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Setting Aplikasi', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Query Database" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Query Database', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Setting Aplikasi" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Setting Aplikasi', tabPath='profil perusahaan.zul')"/>
         </nav>
         <nav label="Ploychompoo" iconSclass="z-icon-home">
             <navitem label="Geo Data" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Geo Data', tabPath='Ploychompoo/geoData.zul')"/>

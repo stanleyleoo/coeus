@@ -2,14 +2,14 @@
 
 <zk xmlns:n="native">
 <style dynamic="true">
-        .right_col{
+        .right-col{
             background-color: white;
         }
         .page-header{
             margin-top:10px;
         }
 </style>
-<vlayout sclass="right_col" id="layoutWindow" apply="org.zkoss.bind.BindComposer"
+<vlayout sclass="right-col" id="layoutWindow" apply="org.zkoss.bind.BindComposer"
 	height="100%" width="100%">
     <div sclass="row">
         <div sclass="col-md-12 col-xs-12 col-lg-12">    

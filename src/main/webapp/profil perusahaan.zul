@@ -2,14 +2,14 @@
 
 <zk xmlns:n="native">
     <style dynamic="true">
-        .right_col{
+        .right-col{
             background-color: white;
         }
         .page-header{
-                margin-top:10px;
-            }
+            margin-top:10px;
+        }
      </style>
-    <vlayout sclass="right_col" id="layoutWindow" apply="org.zkoss.bind.BindComposer"
+    <vlayout sclass="right-col" id="layoutWindow" apply="org.zkoss.bind.BindComposer"
 	height="100%" width="100%">
         <div sclass="row">
             <div class="col-md-12 col-xs-12 col-lg-12">
@@ -44,7 +44,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 control-label">Nama Perusahaan</label>
                                     <div class="col-sm-4">
-                                        <textbox id="NamaPerusahaan" sclass="form-control input-sm" disabled="false"/>
+                                        <textbox id="NamaPerusahaan" sclass="nama form-control input-sm" disabled="false"/>
                                     </div>
                                 </div>
                             </row>
@@ -70,13 +70,17 @@
                                         <column class="col-xs-12 col-md-12 col-lg-12"/>
                                     </columns>
                                     <rows>
-                                        <row>
+                                        <row style="margin-top:30px">
                                             <div class="form-group row">
                                                 <label class="col-sm-2 control-label">Kelompok</label>
                                                 <div class="col-sm-3">
-                                                    <combobox id="kelompokSelectbox" sclass="input-sm">
-                                                        <comboitem label="Customer"></comboitem>
-                                                    </combobox>   
+                                                    <listbox id="Kelompok" mold="select" sclass="listbox form-control input-sm    ">
+                                                        <listitem label="1"/>
+                                                        <listitem label="2"/>
+                                                        <listitem label="3"/>
+                                                        <listitem label="4"/>
+                                                        <listitem label="5"/>
+                                                    </listbox>   
                                                 </div>
                                             </div>
                                         </row>
@@ -96,9 +100,13 @@
                                             <div class="form-group row">
                                                 <label class="col-sm-2 control-label">Data Geografis</label>
                                                 <div class="col-sm-3">
-                                                    <combobox id="DataGeografis" sclass="input-sm">
-                                                        <comboitem label="Customer"></comboitem>
-                                                    </combobox>   
+                                                    <listbox id="DataGeografis" mold="select" sclass="listbox form-control input-sm">
+                                                        <listitem label="1"/>
+                                                        <listitem label="2"/>
+                                                        <listitem label="3"/>
+                                                        <listitem label="4"/>
+                                                        <listitem label="5"/>
+                                                    </listbox>     
                                                 </div>
                                             </div>
                                         </row>
@@ -106,9 +114,13 @@
                                             <div class="form-group row">
                                                 <label class="col-sm-2 control-label">Kelompok Lokasi</label>
                                                 <div class="col-sm-3">
-                                                    <combobox id="KelompokLokasi" sclass="input-sm">
-                                                        <comboitem label="Customer"></comboitem>
-                                                    </combobox>   
+                                                    <listbox id="KelompokLokasi" mold="select" sclass="listbox form-control input-sm    ">
+                                                        <listitem label="1"/>
+                                                        <listitem label="2"/>
+                                                        <listitem label="3"/>
+                                                        <listitem label="4"/>
+                                                        <listitem label="5"/>
+                                                    </listbox>   
                                                 </div>
                                             </div>
                                         </row>

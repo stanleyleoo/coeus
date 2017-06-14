@@ -15,12 +15,12 @@ and open the template in the editor.
   position: relative;
   border: 1px solid #cccccc;
   border-width: 0 1px 0 0;
-  background-color: #68696d;
+  background-color: white;
 }
 .sidebar-min{
     width: 43px; 
     height: 100vh;
-    background-color: #68696d;
+    background-color: white;
 }
 .z-nav-content > [class*="icon-"], .z-navitem-content > [class*="icon-"], .z-navitem-content > [class*="fa-"]{
     float: right;
@@ -36,7 +36,7 @@ and open the template in the editor.
 .sidebar-min > .nav-list [class*="z-icon-"]{
   position: absolute;
   left: 1;
-}
+}   
 
 .sidebar:before {
   content: "";
@@ -76,8 +76,9 @@ and open the template in the editor.
   height: 38px;
   line-height: 36px;
   padding: 0 16px 0 7px;
-  background-color: #68696d;
-  color: #e5e6e8;
+  background-color: white;
+  color: #68696d;
+  font-weight: bold;
   text-shadow: none !important;
   font-size: 13px;
   text-decoration: none;
@@ -102,28 +103,28 @@ and open the template in the editor.
   top: 0px;
   bottom: 0;
   left: 0;
-  width: 3px;
-  max-width: 3px;
+  width: 4px;
+  max-width: 4px;
   height: auto;
   overflow: hidden;
-  background-color: #f98901;
+  background-color: #2a2951;
 }
 .nav-list.z-navbar > ul > .z-nav > ul {
   border-top: none;
   
 }
 /*warna menu saat dibuka*/
-.nav-list.z-navbar > ul > .z-nav-open > a,
+/*.nav-list.z-navbar > ul > .z-nav-open > a,
 .nav-list.z-navbar > ul > .z-nav-open > a:hover,
 .nav-list.z-navbar > ul > .z-nav-open > a:focus {
-  background-color: #eceae7;
-  color: #68696d;
-}
-/*.nav-list.z-navbar > ul .z-nav-selected > .z-nav-content {
-  background-color: red;
+  background-color: white;
+  color: #122536;
 }*/
+.nav-list.z-navbar > ul .z-nav-selected > .z-nav-content {
+  background-color: #fafafa;
+}
 .nav-list.z-navbar > ul .z-nav-selected > .z-nav-content > .z-nav-text {
-  color: #666666;
+  color: #2b2951;
 }
 .nav-list.z-navbar > ul .z-nav-selected > .z-nav-content:before {
   display: none;
@@ -168,15 +169,15 @@ and open the template in the editor.
 .nav-list.z-navbar > ul .z-navitem-selected > .z-navitem-content,
 .nav-list.z-navbar > ul .z-navitem-selected > .z-navitem-content:hover,
 .nav-list.z-navbar > ul .z-navitem-selected > .z-navitem-content:focus {
-  background-color: #68696d;
-  color: #e5e6e8;
+  background-color: #fafafa;
+  color: #2b2951;
 }
 .nav-list.z-navbar > ul .z-navitem-selected > .z-navitem-content > .z-navitem-text {
   font-size: 13px;
 }
 .nav-list.z-navbar > ul .z-navitem-selected > .z-navitem-content:hover:before {
   display: none;
-  background-color: red;
+  background-color: #2b2951;
 }
 
 /*kotak sidebar
@@ -228,7 +229,7 @@ kotak sidebar
   padding: 0 5px;
   line-height: 18px;
   border-radius: 16px;
-  background-color: none;
+  background-color: transparent;
   position: relative;
   margin-right: 0;
 }
@@ -246,10 +247,10 @@ kotak sidebar
 /*Tulisan pas dropdown*/
 .nav-list.z-navbar > ul > .z-nav > ul > li a,
 .z-nav-popup > li a {
-  background-color: #d2d4d3;
+  background-color: white;
   line-height: normal;
   display: block;
-  color: #68696d;
+  color: #2b2951;
   padding: 7px 0 9px 37px;
   margin: 0;
   border: 0;
@@ -280,7 +281,7 @@ kotak sidebar
   left: 10px;
   top: 11px;
   z-index: 1;
-  background-color: #FFF;
+  background-color: transparent;
 }
  /*panah kiri saat hover dropdown*/
 .nav-list.z-navbar > ul > .z-nav > ul > li:hover > a > i,
@@ -290,23 +291,20 @@ kotak sidebar
 .nav-list.z-navbar > ul > .z-nav > ul > .z-navitem-selected > a > i,
 .z-nav-popup > .z-navitem-selected > a > i {
   display: inline-block;
-  color: #c1c2c4;
+  color: #2b2951;
   
 }
 
-/*.nav-list.z-navbar > ul > .z-nav > ul .z-navitem-selected > .z-navitem-content,
+.nav-list.z-navbar > ul > .z-nav > ul .z-navitem-selected > .z-navitem-content,
 .z-nav-popup .z-navitem-selected > .z-navitem-content,
 .nav-list.z-navbar > ul > .z-nav > ul .z-navitem-selected > .z-navitem-content:hover,
-.z-nav-popup .z-navitem-selected > .z-navitem-content:hover,
-.nav-list.z-navbar > ul > .z-nav > ul .z-navitem-selected > .z-navitem-content:focus,
-.z-nav-popup .z-navitem-selected > .z-navitem-content:focus {
-  background-color: red;
-  color: #fec35d;
+.z-nav-popup .z-navitem-selected > .z-navitem-content:hover {
+  color: #2b2951;
 }
 
 .z-nav-popup .z-nav-content, .z-nav-popup .z-navitem-content, .z-nav-popup .z-navseparator{
-    background: red;
-}*/
+    background: #2b2951;
+}
 
 .nav-list.z-navbar > ul > .z-nav > ul:before,
 .z-nav-popup:before {
@@ -335,7 +333,7 @@ kotak sidebar
   -webkit-font-smoothing: antialiased;
   *margin-right: .3em;
   font-size: 18px;
-  color: #a4a5a7;
+  color: #2b2951;
   content: "\f107";
   position: absolute;
   display: inline-block;
@@ -347,23 +345,36 @@ kotak sidebar
 }
 
 .nav-list.z-navbar > ul > li > a:hover {
-  background-color: #dcdcdc;
-  color: #585858;
+  background-color: #f0f0f0;
+  color: #2b2951;
 }
 .nav-list.z-navbar > ul > .z-nav-open > a {
-  color: #1963aa;
+  background-color: #f0f0f0;
+    color: #2b2951;
 }
 .nav-list.z-navbar > ul > li > a:focus {
- background-color: #484643;
-  color: #fafafa;
+ background-color: #fafafa;
+  color: #2b2951;
 }
 .nav-list.z-navbar > ul > .z-nav-open > a:hover,
 .nav-list.z-navbar > ul > .z-nav-open > a:focus {
-  background-color: #484643;
-    color: #fafafa;
+  background-color: #fafafa;
+        color: #2b2951;
 
 }
 /*// untuk border tiap list sidebar*/
 .nav-list.z-navbar > ul > li{
     border-top: 0px solid #FCFCFC;
+}
+
+.nav-list.z-navbar > ul > .z-nav > ul > li a:hover,
+.z-nav-popup > li a:hover {
+  text-decoration: none;
+  color:#979191;
+  background-color: #ffffff !important;
+}
+.nav-list.z-navbar > ul > .z-nav > ul > li a:focus,
+.z-nav-popup > li a:focus {
+  text-decoration: none;
+  color:#979191;
 }
