@@ -6,7 +6,7 @@
             position="center" style="padding: 0px 3px 5px 3px;" closable="true" maximizable="false" minimizable="false"
             mode="modal" shadow="false" sizable="true" onCancel="self.onClose();"
             apply="org.zkoss.bind.BindComposer" 
-            validationMessages="@id('vmsgs')" viewModel="@id('vm') @init('com.lemonhexa.web.component.GeodataBrowseData')" >            
+            validationMessages="@id('vmsgs')" viewModel="@id('vm') @init('com.lemonhexa.web.component.CompanyCategoryBrowseData')" >            
         <caption id="caption" label="List Geodata | Browse Data" style="margin: 0px 0px 0px 10px;vertical-align: middle;padding:0px 15px 0px 0px;font-weight: bold;font-size: 10pt; font-family: Verdana, Arial, Helvetica, sans-serif;color:#333;"/>
         <custom-attributes org.zkoss.zul.listbox.rod="true"/>
         <custom-attributes org.zkoss.zul.listbox.initRodSize="13"/> 
@@ -26,12 +26,29 @@
         
         <div class="row" vflex="1">
             <listbox id="listboxData" mold="paging" pageSize="5" fixedLayout="true" 
-                             hflex="1" vflex="1" model="@load(vm.geodata)" 
-                             selectedItem="@bind(vm.geodataSelected)" 
+                             hflex="1" vflex="1" model="@load(vm.companycategory)" 
+                             selectedItem="@bind(vm.companyCategorySelected)" 
                              onSelect="@command('listboxSelected',window=windowbrowse)">
                 <auxhead>
+                    
                     <auxheader colspan="1" align="center">
-                        <textbox instant="true" width="75%"  />
+                        <textbox instant="true" width="75%"  
+					 />
+                    </auxheader>
+                    
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%"  
+					 />
+                    </auxheader>
+                    
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%" 
+					 />
+                    </auxheader>
+                    
+                    <auxheader colspan="1" align="center">
+                        <textbox instant="true" width="75%" 
+					 />
                     </auxheader>
                     
                     <auxheader colspan="1" align="center">
@@ -45,59 +62,43 @@
                     </auxheader>
                     
                     <auxheader colspan="1" align="center">
-                        <textbox instant="true" width="75%" value="@bind(vm.filter.province)" onChange="@command('changeListSplit')"
+                        <textbox instant="true" width="75%"  
 					 />
                     </auxheader>
                     
                     <auxheader colspan="1" align="center">
-                        <textbox instant="true" width="75%" value="@bind(vm.filter.country)" onChange="@command('changeListSplit')"  
+                        <textbox instant="true" width="75%"  
 					 />
                     </auxheader>
+                    
                     <auxheader colspan="1" align="center">
                         <textbox instant="true" width="75%"  
 					 />
                     </auxheader>
+                    
                     <auxheader colspan="1" align="center">
                         <textbox instant="true" width="75%"  
 					 />
                     </auxheader>
+                    
                     <auxheader colspan="1" align="center">
                         <textbox instant="true" width="75%"  
 					 />
                     </auxheader>
+                    
                     <auxheader colspan="1" align="center">
                         <textbox instant="true" width="75%"  
 					 />
                     </auxheader>
-                    <auxheader colspan="1" align="center">
-                        <textbox instant="true" width="75%"  
-					 />
-                    </auxheader>
-                    <auxheader colspan="1" align="center">
-                        <textbox instant="true" width="75%"  
-					 />
-                    </auxheader>
-                    <auxheader colspan="1" align="center">
-                        <textbox instant="true" width="75%"  
-					 />
-                    </auxheader>
-                    <auxheader colspan="1" align="center">
-                        <textbox instant="true" width="75%"  
-					 />
-                    </auxheader>
-                    <auxheader colspan="1" align="center">
-                        <textbox instant="true" width="75%"  
-					 />
-                    </auxheader>
+                    
+                   
                 </auxhead>
                 <listhead sizable="true" menupopup="auto">                
-                    <listheader label="Global Record Id" visible="false" align="center" sort="auto(globalRecordId)" />
-                    <listheader label="District"  visible="true" align="center" sort="auto(district)" />                
-                    <listheader label="Regency" visible="true" align="center" sort="auto(regency)" /> 
-                    <listheader label="Province" visible="true" align="center" sort="auto(province)" />
-                    <listheader label="Country" visible="true" align="center" sort="auto(country)" />                
-                    <listheader label="Note" visible="false" align="center" sort="auto(note)" />                                              
-                    <listheader label="Record Version" visible="false" align="center" sort="auto(recordVersion)" />  
+                    <listheader label="Category"  visible="true" align="center" sort="auto(category)" />                
+                    <listheader label="Sub 1" visible="true" align="center" sort="auto(sub1)" /> 
+                    <listheader label="Sub 2" visible="true" align="center" sort="auto(sub2)" />
+                    <listheader label="Note" visible="true" align="center" sort="auto(note)" />                
+                    <listheader label="Record Version" visible="false" align="center" sort="auto(recordVersion)" />                                              
                     <listheader label="Default Status" visible="false" align="center" sort="auto(defaultStatus)" />
                     <listheader label="Void Status" visible="false" align="center" sort="auto(voidStatus)" />                
                     <listheader label="Void Reason" visible="false" align="center" sort="auto(voidReason)" /> 
@@ -108,11 +109,9 @@
                 </listhead>
                 <template name="model" var="data" status="s">
                     <listitem>
-                        <listcell label="@load(data.globalRecordId)"/>
-                        <listcell label="@load(data.district)"/>       
-                        <listcell label="@load(data.regency)"/>
-                        <listcell label="@load(data.province)"/>
-                        <listcell label="@load(data.country)"/>       
+                        <listcell label="@load(data.category)"/>       
+                        <listcell label="@load(data.sub1)"/>
+                        <listcell label="@load(data.sub2)"/>    
                         <listcell label="@load(data.note)"/>
                         <listcell label="@load(data.recordVersion)"/>
                         <listcell label="@load(data.defaultStatus)"/>       

@@ -19,6 +19,7 @@ import org.zkoss.bind.annotation.BindingParam;
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.Init;
 import org.zkoss.bind.annotation.NotifyChange;
+import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Window;
 
@@ -37,6 +38,7 @@ public class GeodataBrowseData {
 
     @Init
     public void init() {
+        getFilter();
         setGeodata(new ListModelList<>(AppUtil.getWebService().getGeodatas()));
         setPageSize(new ArrayList<>(Arrays.asList(sizeData)));
     }
@@ -103,9 +105,9 @@ public class GeodataBrowseData {
     public GeodataFilter getFilter() {
         return filter;
     }
-
+    
     //getter & setter
-
+    
     public ListModelList<Geodata> getGeodata() {
         return geodata;
     }

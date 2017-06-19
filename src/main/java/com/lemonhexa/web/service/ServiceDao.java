@@ -1,5 +1,6 @@
 package com.lemonhexa.web.service;
 
+import com.lemonhexa.web.entity.Companycategory;
 import java.util.List;
 import com.lemonhexa.web.entity.Geodata;
 /**
@@ -14,7 +15,11 @@ public interface ServiceDao {
     
     public boolean truncateDb();
     
-    public  Geodata getGeodataById(Integer id);
+    public  Geodata getGeodataById(Integer recordId);
     
-    public List<Geodata> getGeodatas(); 
+    public List<Geodata> getGeodatas();
+    
+    public  Companycategory getCompanycategoryById(Integer recordId);
+    
+    public List<Companycategory> getCompanycategories();
 }

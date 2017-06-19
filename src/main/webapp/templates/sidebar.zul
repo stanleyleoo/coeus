@@ -4,7 +4,7 @@
         <navitem label="Dashboard" selected="true" iconSclass="z-icon-dashboard" onClick="@command('addTab', tabName='Dashboard', tabPath='dashboard.zul')"/>
         <nav label="Data Master" iconSclass="z-icon-desktop">
             <navitem label="Profil Perusahaan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Perusahaan', tabPath='profil perusahaan.zul')"/>
-            <navitem label="Kategori Perusahaan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kategori Perusahaan', tabPath='KategoriPerusahaan.zul')"/>
+            <navitem label="Kategori Perusahaan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kategori Perusahaan', tabPath='pages/kategoriPerusahaan.zul')"/>
             <navitem label="Profil Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Produk', tabPath='profil perusahaan.zul')"/>
             <navitem label="Kategori Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kategori Produk', tabPath='profil perusahaan.zul')"/>
             <navitem label="Profil Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Pegawai', tabPath='profil perusahaan.zul')"/>
@@ -58,10 +58,6 @@
             <navitem label="Profil Pemakai" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Pemakai', tabPath='profil perusahaan.zul')"/>
             <navitem label="Query Database" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Query Database', tabPath='profil perusahaan.zul')"/>
             <navitem label="Setting Aplikasi" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Setting Aplikasi', tabPath='profil perusahaan.zul')"/>
-        </nav>
-        <nav label="Ploychompoo" iconSclass="z-icon-home">
-            <navitem label="Geo Data" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Geo Data', tabPath='Ploychompoo/geoData.zul')"/>
-            
         </nav>
     </navbar>
     <!-- Toggler -->

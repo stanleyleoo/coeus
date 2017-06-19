@@ -3,6 +3,7 @@
   <persistence-unit name="com.lemonhexa_coeus_war_1.0PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.lemonhexa.web.entity.Geodata</class>
+    <class>com.lemonhexa.web.entity.Companycategory</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/lemonhexa"/>

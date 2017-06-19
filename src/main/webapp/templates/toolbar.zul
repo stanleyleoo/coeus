@@ -3,10 +3,10 @@
 <zk xmlns="http://www.zkoss.org/2005/zul">
     <div class="btn-toolbar">
     <toolbar sclass="btn-group tb" hflex="1">
-        <toolbarbutton iconSclass="fa z-icon-file fa-2x" tooltiptext="New" class="btn btn-default"
+<!--        <toolbarbutton iconSclass="fa z-icon-file fa-2x" tooltiptext="New" class="btn btn-default"
                        visible="@load(vm.addState.visible)" 
                        disabled="@load(vm.addState.disabled)" 
-                       onClick="@command('addClick')"/>                                    
+                       onClick="@command('addClick')"/>                                    -->
         <toolbarbutton iconSclass="fa z-icon-trash fa-2x" tooltiptext="Delete" class="btn btn-danger"
                        visible="@load(vm.delState.visible)"  
                        disabled="@load(vm.delState.disabled)" 
@@ -23,10 +23,10 @@
                        visible="@load(vm.browseState.visible)"  
                        disabled="@load(vm.browseState.disabled)" 
                        onClick="@command('browseClick')"/>                                     
-        <toolbarbutton iconSclass="fa z-icon-info fa-2x" tooltiptext="Information" class="btn btn-default"
+<!--        <toolbarbutton iconSclass="fa z-icon-info fa-2x" tooltiptext="Information" class="btn btn-default"
                        visible="@load(vm.infoState.visible)"  
                        disabled="@load(vm.infoState.disabled)" 
-                       onClick="@command('infoClick')"/>
+                       onClick="@command('infoClick')"/>-->
     </toolbar>
     </div>
     <div height="10px"></div>

@@ -1,5 +1,6 @@
 package com.lemonhexa.web.service;
 
+import com.lemonhexa.web.entity.Companycategory;
 import com.lemonhexa.web.entity.Geodata;
 import java.util.List;
 import org.hibernate.Session;
@@ -41,18 +42,31 @@ public class ServiceDaoImpl implements ServiceDao {
     @Transactional(readOnly = false)
     public boolean truncateDb() {
         getCurrentSession().createSQLQuery("DELETE FROM lemonhexa.geodata;").executeUpdate();
+        getCurrentSession().createSQLQuery("DELETE FROM lemonhexa.companycategory;").executeUpdate();
         return true;
     }
     
     @Override
-    public Geodata getGeodataById(Integer id) {
-        Geodata geodata = (Geodata) getCurrentSession().get(Geodata.class, id);
+    public Geodata getGeodataById(Integer recordId) {
+        Geodata geodata = (Geodata) getCurrentSession().get(Geodata.class, recordId);
         return geodata;
     }
 
     @Override
     public List<Geodata> getGeodatas() {
-        List<Geodata> listGeodata = getCurrentSession().createQuery("FROM Geodata a ORDER BY a.id ASC").list();
+        List<Geodata> listGeodata = getCurrentSession().createQuery("FROM Geodata a ORDER BY a.recordId ASC").list();
         return listGeodata;
+    }
+
+    @Override
+    public Companycategory getCompanycategoryById(Integer recordId) {
+        Companycategory companycategory = (Companycategory) getCurrentSession().get(Companycategory.class, recordId);
+        return companycategory;
+    }
+
+    @Override
+    public List<Companycategory> getCompanycategories() {
+        List<Companycategory> listCompanycategory = getCurrentSession().createQuery("FROM Companycategory a ORDER BY a.recordId ASC").list();
+        return listCompanycategory;
     }
 }

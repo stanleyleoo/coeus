@@ -10,7 +10,8 @@
         }
 </style>
 <vlayout sclass="right-col" id="layoutWindow" apply="org.zkoss.bind.BindComposer"
-	height="100%" width="100%">
+	height="100%" width="100%" validationMessages="@id('vmsgs')" 
+         viewModel="@id('vm') @init('com.lemonhexa.web.ui.web.CompanyCategoryVm')">
     <div sclass="row">
         <div sclass="col-md-12 col-xs-12 col-lg-12">    
             <div sclass="page-header col-md-12 col-xs-12">
@@ -18,7 +19,7 @@
                 <a label="overview &amp; stats" iconSclass="z-icon-angle-double-right" sclass="subtitle"/>
             </div>
             <include src="templates/toolbar.zul"/>
-            <vlayout height="1" width="1" spacing="0" apply="org.zkoss.bind.BindComposer">
+            <vlayout height="1" width="1" spacing="0">
                 <grid sclass="tblWithoutHover">
                     <columns class="col-md-12">
                         <column class="col-xs-12 col-md-12"/>
@@ -28,7 +29,8 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 control-label">Record Id</label>
                                 <hlayout sclass="col-sm-2">
-                                    <textbox id="RecordId" sclass="form-control input-sm" hflex="1" disabled="true"/>
+                                     <textbox id="txtRecordId" sclass="form-control input-sm" hflex="1" maxlength="11" 
+                                                      errorMessage="@load(vmsgs[self])" disabled="true" value="@bind(vm.selected.recordId) @save(vm.selected.recordId, before='saveClick')  @validator('beanValidator')"/>
                                 </hlayout>
                             </div>
                         </row>
@@ -36,7 +38,8 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 control-label">Nama Category</label>
                                 <hlayout sclass="col-sm-2">
-                                    <textbox id="Category" sclass="form-control input-sm" hflex="1" disabled="false"/>
+                                     <textbox id="txtCategory" sclass="form-control input-sm" hflex="1" maxlength="11" 
+                                                      errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.category) @save(vm.selected.category, before='saveClick')  @validator('beanValidator')"/>
                                 </hlayout>
                             </div>
                         </row>
@@ -44,7 +47,8 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 control-label">Sub 1</label>
                                 <hlayout sclass="col-sm-2">
-                                    <textbox id="Sub1" sclass="form-control input-sm" hflex="1" disabled="false"/>
+                                    <textbox id="txtSub1" sclass="form-control input-sm" hflex="1" maxlength="11" 
+                                                      errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.sub1) @save(vm.selected.sub1, before='saveClick')  @validator('beanValidator')"/>
                                 </hlayout>
                             </div>
                         </row>

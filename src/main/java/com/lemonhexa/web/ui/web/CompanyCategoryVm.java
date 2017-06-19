@@ -5,6 +5,7 @@
  */
 package com.lemonhexa.web.ui.web;
 
+import com.lemonhexa.web.entity.Companycategory;
 import com.lemonhexa.web.entity.Geodata;
 import com.lemonhexa.web.helper.AppUtil;
 import com.lemonhexa.web.templates.Toolbar;
@@ -21,13 +22,12 @@ import org.zkoss.zk.ui.util.Clients;
  *
  * @author Ploychompoo
  */
-public class GeodataVm extends Toolbar{
-    private Geodata selected;
-    private List<Geodata> lists;
-    Integer globalRecordId = 1;
+public class CompanyCategoryVm extends Toolbar{
+    private Companycategory selected;
+    private List<Companycategory> lists;
     Integer recordVersion = 0;
     
-    public GeodataVm(){
+    public CompanyCategoryVm(){
         
     }
     
@@ -35,16 +35,8 @@ public class GeodataVm extends Toolbar{
     @NotifyChange({"selected"})
     public void Init() {
         super.init();
-        setSelected(new Geodata());
+        setSelected(new Companycategory());
     }
-    
-//    @Command
-//    @Override
-//    @NotifyChange({"selected"})
-//    public void addClick() {
-//        super.addClick();
-//        setSelected(new Geodata());
-//    }
     
     @Command
     @Override
@@ -79,9 +71,7 @@ public class GeodataVm extends Toolbar{
         try {    
             if(getSelected().getRecordId() == null){
                 if(getSelected() != null){
-                    getSelected().setGlobalRecordId("A00" + globalRecordId);
                     getSelected().setRecordVersion(recordVersion);
-                    globalRecordId++;
                 }else{
                     System.out.println("gak tau");
                 }
@@ -112,32 +102,41 @@ public class GeodataVm extends Toolbar{
     @Override
     @NotifyChange({"selected"})
     public void browseClick() {
-        Executions.createComponents("/Component/geodataBrowseData.zul", null, null);
+        Executions.createComponents("/Component/companyCategoryBrowseData.zul", null, null);
     }
 
     @GlobalCommand
     @NotifyChange({"selected"})
-    public void browseSelected(@BindingParam("geodataSelected") Geodata geodataSelected) {
-        if (geodataSelected != null) {
-            setSelected(geodataSelected);
+    public void browseSelected(@BindingParam("companyCategorySelected") Companycategory companyCategorySelected) {
+        if (companyCategorySelected != null) {
+            setSelected(companyCategorySelected);
             super.editClick();
         }
     }
-    
-    public Geodata getSelected() {
+
+    public Companycategory getSelected() {
         return selected;
     }
 
-    public void setSelected(Geodata selected) {
+    public void setSelected(Companycategory selected) {
         this.selected = selected;
     }
 
-    public List<Geodata> getLists() {
+    public List<Companycategory> getLists() {
         return lists;
     }
 
-    public void setLists(List<Geodata> lists) {
+    public void setLists(List<Companycategory> lists) {
         this.lists = lists;
     }
+
+    public Integer getRecordVersion() {
+        return recordVersion;
+    }
+
+    public void setRecordVersion(Integer recordVersion) {
+        this.recordVersion = recordVersion;
+    }
+    
     
 }
