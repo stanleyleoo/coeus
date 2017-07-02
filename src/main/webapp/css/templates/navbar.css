@@ -29,7 +29,6 @@ and open the template in the editor.
   height: 100%;
   width: 80px;
   min-width: 40px;
-  padding: 0 8px;
   position: relative;
 }
 
@@ -75,11 +74,19 @@ and open the template in the editor.
 }
 /*iphone 5*/
 @media screen and (max-width: 1024px) {
+    .navbar{
+        height:50px;
+    }
     .navbar .navbar-brand{
-     margin-top: 10px;
      height:50px;
      width:120px;
-      }
+    }
+    .nav-user > div > a.grey,
+    .nav-user > div .user-menu.grey {
+      padding-top:1vh;
+      border: none;
+      height:50px;
+    }
     .nav-user > div > a{
       line-height: 52px;
       text-align: center;

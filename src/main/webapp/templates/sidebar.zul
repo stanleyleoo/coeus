@@ -1,9 +1,9 @@
 <div id="sidebar" sclass="sidebar" apply="com.lemonhexa.web.templates.sidebarComposer">
     <!-- SideBar -->
-    <navbar id="navbar" sclass="nav-list" orient="vertical">
-        <navitem label="Dashboard" selected="true" iconSclass="z-icon-dashboard" onClick="@command('addTab', tabName='Dashboard', tabPath='dashboard.zul')"/>
+    <navbar id="navbar" sclass="nav-list" orient="vertical" mold="default">
+        <navitem label="Dashboard" selected="true" iconSclass="z-icon-dashboard" onClick="@command('addTab', tabName='Dashboard', tabPath='pages/dashboard.zul')"/>
         <nav label="Data Master" iconSclass="z-icon-desktop">
-            <navitem label="Profil Perusahaan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Perusahaan', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Profil Perusahaan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Perusahaan', tabPath='pages/profil perusahaan.zul')"/>
             <navitem label="Kategori Perusahaan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kategori Perusahaan', tabPath='pages/kategoriPerusahaan.zul')"/>
             <navitem label="Profil Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Produk', tabPath='profil perusahaan.zul')"/>
             <navitem label="Kategori Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kategori Produk', tabPath='profil perusahaan.zul')"/>

@@ -46,7 +46,7 @@ public class sidebarComposer extends SelectorComposer<Component>{
     @Init
     public void init() {
         tabsModel = new ListModelList<>();
-        tabsModel.add(selected = new TabInfo("dashboard", "dashboard.zul"));
+        tabsModel.add(selected = new TabInfo("dashboard", "pages/dashboard.zul"));
         
     }
     @Override

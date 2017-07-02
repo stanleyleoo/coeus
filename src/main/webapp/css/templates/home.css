@@ -1,14 +1,22 @@
-.tabbox{
-    width: 1339px;
-}
-
 .index{
     background-color: #f0f0f0;
+    overflow-y: auto;
+}
+.page-header{
+            background-color:white;
+        }
+.page-header .z-label{
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color:#878787;
+    padding-left:20px;
 }
 .z-tabpanel{
     padding:0;
-    max-height: 685px;
     overflow-y: auto;
+    border:none;
+}
+.tabbox{
+    margin-left:190px;
 }
 .homepage{
     margin:0;
@@ -19,10 +27,16 @@
     margin: 0 auto;
 }
 .z-textbox{
-    border:1px solid #2b2950;
+    border-radius:0;
+    border:1px solid #eaebed; 
     background: transparent;
 }
 .listbox{
-    border:1px solid #2b2950;
+    border:1px solid #eaebed;
     background: transparent;
 }
+@media screen and (max-width: 1024px) {
+        .tabbox{
+            margin-left:50px;
+        }
+    }

@@ -9,18 +9,20 @@ and open the template in the editor.
 */
 
 .sidebar {
-  height:90.8vh;
-  width: 189px;
+  width: 190px;
+  position:fixed;
+  height:90.7vh;
   float: left; 
-  position: relative;
   border: 1px solid #cccccc;
   border-width: 0 1px 0 0;
   background-color: white;
 }
 .sidebar-min{
-    width: 43px; 
-    height: 100vh;
+    width: 50px;
+    height:90.7vh;
     background-color: white;
+    float: left; 
+    position:fixed;
 }
 .z-nav-content > [class*="icon-"], .z-navitem-content > [class*="icon-"], .z-navitem-content > [class*="fa-"]{
     float: right;
@@ -30,9 +32,6 @@ and open the template in the editor.
   border-width: 10px 7px;
   top: 8px;
 }
-.sidebar-min .nav-list.z-navbar > ul {
-  width: 42px;
-}
 .sidebar-min > .nav-list [class*="z-icon-"]{
   position: absolute;
   left: 1;
@@ -41,13 +40,10 @@ and open the template in the editor.
 .sidebar:before {
   content: "";
   display: block;
-  width: 190px;
   position: fixed;
   bottom: 0;
   top: 0;
   z-index: -1;
-/*  background-color: #f2f2f2;
-  border: 1px solid #cccccc;*/
   border-width: 0 1px 0 0;
 }
 .nav-list.z-navbar > ul > .z-nav > ul,
@@ -75,7 +71,7 @@ and open the template in the editor.
   border-width: 0;
   height: 38px;
   line-height: 36px;
-  padding: 0 16px 0 7px;
+  padding: 0 9px 0 23px;
   background-color: white;
   color: #68696d;
   font-weight: bold;
@@ -88,10 +84,10 @@ and open the template in the editor.
 .nav-list.z-navbar > ul > li > a > [class*="z-icon-"] {
   display: inline-block;
   vertical-align: middle;
-  min-width: 30px;
+  min-width: 20px;
   text-align: center;   
   font-size: 18px;
-  margin-right: 2px;
+  margin-right: 9px;
   height: auto;
 }
 
@@ -218,8 +214,9 @@ kotak sidebar
   border: none;
   background-color: transparent;
   text-align: center;
-  padding: 3px 0;
+  padding: 3px 3px;
   position: relative;
+  margin-left: 15px;
 }
 .sidebar-collapse > a [class*="z-icon"] {
   display: inline-block;
@@ -306,7 +303,8 @@ kotak sidebar
     background: #2b2951;
 }
 
-.nav-list.z-navbar > ul > .z-nav > ul:before,
+/*garis samping pas dropdown*/
+/*.nav-list.z-navbar > ul > .z-nav > ul:before,
 .z-nav-popup:before {
   content: "";
   display: block;
@@ -317,7 +315,7 @@ kotak sidebar
   bottom: 0;
   border: 1px dotted #9dbdd6;
   border-width: 0 0 0 1px;
-}
+}*/
 
 .z-nav-popup {
   border: 0px solid #e5e5e5;
@@ -377,4 +375,39 @@ kotak sidebar
 .z-nav-popup > li a:focus {
   text-decoration: none;
   color:#979191;
+}
+
+.nav-list.z-navbar > ul > .z-nav > ul .z-nav li > a,
+.z-nav-popup .z-nav li > a {
+  margin-left: 0px;
+  padding-left: 0px;
+}
+.sidebar-min .nav-list.z-navbar > ul {
+  width: 50px;
+}
+.nav-list.z-navbar > ul > .z-nav > ul > li a,
+.z-nav-popup > li a {
+  background-color: #ffffff;
+  line-height: normal;
+  display: block;
+  color: #616161;
+  padding: 7px 0 9px 35px;
+  margin: 0;
+}
+.nav-list.z-navbar > ul > .z-nav > ul > li:before,
+.z-nav-popup > li:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 0px;
+  left: 0px;
+  top: 0px;
+  border-top: 0px dotted #9dbdd6;
+  z-index: 1;
+}
+/*width menu saat popup*/
+.z-nav-popup {
+  width:200px;
+  border: 1px solid #e5e5e5;
+  border-top-width: 0;
 }

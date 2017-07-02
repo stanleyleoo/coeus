@@ -14,27 +14,32 @@
 <?link href="css/templates/navbar.css" rel="stylesheet" type="text/css"?>
 <?link href="css/templates/sidebar.css" rel="stylesheet" type="text/css"?>
 <?link href="css/templates/home.css" rel="stylesheet" type="text/css"?>
-<?link href="css/templates/toolbar.css" rel="stylesheet" type="text/css"?>
 <zk xmlns="http://www.zkoss.org/2005/zul">
-    <div class="index" id="index" width="100%" height="100%"
+    <include src="templates/navbar.zul"/>
+    <vlayout class="container-fluid index" id="index" vflex="1"
             apply="org.zkoss.bind.BindComposer" 
             viewModel="@id('vm') @init('com.lemonhexa.web.templates.sidebarComposer')">
-        <include src="templates/navbar.zul"/>
-        
-        <hlayout id='main' spacing='0'>
-            <include src="templates/sidebar.zul"/>
-            <vlayout class="tabbox">
-                <tabbox model="@load(vm.tabsModel)" hflex="1" sclass="mainmenu">
-                    <template name="model:tab" var="detail">
-                        <tab label="@load(detail.title)" vflex="1" closable="true" onClose="@command('closeTab', tabToClose=detail)"/>
-                    </template>
-                    <template name="model:tabpanel" >
-                        <tabpanel class="overflow" vflex="1">
-                            <include src="@load(each.path)"/>
-                        </tabpanel>
-                    </template>
-                </tabbox>
-            </vlayout>
-        </hlayout>
-    </div>
+        <div sclass="container-fluid">
+            <div sclass="row">
+                <include src="templates/sidebar.zul"/>
+                <div sclass="tabbox">
+                    <tabbox model="@load(vm.tabsModel)" hflex="1" sclass="mainmenu">
+                     <template name="model:tab" var="detail">
+                         <tab label="@load(detail.title)" closable="true" onClose="@command('closeTab', tabToClose=detail)"/>
+                     </template>
+                     <template name="model:tabpanel" >
+                         <tabpanel class="overflow" vflex="1">
+                             <include src="@load(each.path)"/>
+                         </tabpanel>
+                     </template>
+                     </tabbox>
+    <!--                    <navbar mold="bs-tabs" model="@load(vm.tabsModel)" hflex="1" sclass="menu" >
+                         <navitem label="Please" selected="true"/>
+                         <navitem label="JAmes Riady"/>
+                         <navitem label="Buatin Javanya"/>
+                     </navbar>-->
+                 </div>
+            </div>
+        </div>
+    </vlayout>
 </zk>

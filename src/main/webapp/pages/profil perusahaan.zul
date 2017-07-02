@@ -1,0 +1,506 @@
+<?page title="Profil Perusahaan | LemonHexa"?>
+
+<zk xmlns:n="native">
+    <style dynamic="true">
+        .panel-head{
+            font-size:20px; 
+            border-radius: 0;
+        }
+        .panel-head > .panel-heading{
+            color: #2a2951;
+            border-radius: 0;
+            border-color: #e5e5e5;
+        }
+        .panel-head > .panel-body{
+            background-color: #fff;
+        }
+        .btn{
+            margin:0 2vh;
+            width:12vh;
+            text-align:center;
+        }
+        .blank .z-label{
+            padding-top:170px;
+        }
+    @media screen and (max-width: 1024px) {
+        .panel-head{
+            font-size:20px;
+        }
+        .blank .z-label{
+            padding-top:0px;
+        }
+    }
+     </style>
+    <vlayout sclass="right-col container-fluid" id="layoutWindow" apply="org.zkoss.bind.BindComposer"
+	height="100%" width="100%">
+        <div sclass="row">
+            <div sclass="page-header col-md-12 col-xs-12">
+                    <label value="Profil Perusahaan"/>
+            </div>
+        </div>
+        <div sclass="row" style="margin:0 auto;">
+            <div class="col-md-6 col-xs-12">    
+                <panel title="Data Umum" sclass="panel-head">
+                    <panelchildren>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Global Record ID</label>
+                                <div class="col-sm-12">
+                                    <textbox id="GlobalRecordId" sclass="form-control input-sm" disabled="true"/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-5 control-label">Record ID</label>
+                                <div class="col-sm-12">
+                                    <textbox id="RecordId" sclass="form-control input-sm" readonly="true"/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Nama Perusahaan</label>
+                                <div class="col-sm-12">
+                                    <textbox id="NamaPerusahaan" sclass="nama form-control input-sm" disabled="false"/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Alamat</label>
+                                <div class="col-sm-12">
+                                     <textbox id="Alamat" rows="4" sclass="form-control input-sm" hflex="1"/>  
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Lokasi Spesifik</label>
+                                <div class="col-sm-12">
+                                     <textbox id="SpesifikLokasi" rows="4" sclass="form-control input-sm" hflex="1"/>  
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Data Geografis</label>
+                                <div class="col-sm-12">
+                                    <listbox id="DataGeografis" mold="select" sclass="listbox form-control input-sm">
+                                        <listitem label="1"/>
+                                        <listitem label="2"/>
+                                        <listitem label="3"/>
+                                        <listitem label="4"/>
+                                        <listitem label="5"/>
+                                    </listbox>     
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Kategori</label>
+                                <div class="col-sm-12">
+                                    <listbox id="Kategori" mold="select" sclass="listbox form-control input-sm">
+                                        <listitem label="1"/>
+                                        <listitem label="2"/>
+                                        <listitem label="3"/>
+                                        <listitem label="4"/>
+                                        <listitem label="5"/>
+                                    </listbox>     
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Kode Pos</label>
+                                <div class="col-sm-5">
+                                     <textbox id="KodePos" sclass="form-control input-sm" hflex="1"/>  
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Telepon</label>
+                                <div class="col-sm-12">
+                                     <textbox id="Telepon" sclass="form-control input-sm" hflex="1"/>  
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Website</label>
+                                <div class="col-sm-12">
+                                     <textbox id="Website" sclass="form-control input-sm" hflex="1"/>  
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Email</label>
+                                <div class="col-sm-12">
+                                     <textbox id="Email" sclass="form-control input-sm" hflex="1"/>  
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Kelompok</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                                <checkbox class="input-group-addon" />
+                                                <textbox class="form-control" value="Supplier" disabled="true" />
+                                    </div>
+                                </div>  
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                            <checkbox class="input-group-addon" />
+                                            <textbox class="form-control" value="Customer" disabled="true" />
+                                    </div>  
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                            <checkbox class="input-group-addon" />
+                                            <textbox class="form-control" />
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Relasi Sejak</label>
+                                <div class="col-sm-12">
+                                     <datebox id="RelasiSejak" hflex="1"/>  
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Catatan</label>
+                                <div class="col-sm-12">
+                                    <textbox id="Catatan" rows="2" sclass="nama form-control input-sm"/>
+                                </div>
+                            </div>
+                            <div class="form-group row blank">
+                                <label class="col-sm-12 control-label"/>
+                            </div>
+                    </panelchildren>
+                </panel>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <panel title="Data Pajak" sclass="panel-head" vflex="1">
+                    <panelchildren>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Faktur Pajak Kepada</label>
+                                <div class="col-sm-12">
+                                    <textbox id="FakturPajakKepada" sclass="form-control input-sm"/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Alamat Faktur Pajak</label>
+                                <div class="col-sm-12">
+                                    <textbox id="AlamatFakturPajak" rows="2" sclass="form-control input-sm"/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">NPWP</label>
+                                <div class="col-sm-12">
+                                    <textbox id="NPWP" sclass="form-control input-sm"/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">TGL PKP</label>
+                                <div class="col-sm-12">
+                                    <datebox id="TglPKP" hflex="1"/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">NPPKP</label>
+                                <div class="col-sm-12">
+                                    <textbox id="NPPKP" sclass="form-control input-sm"/>
+                                </div>
+                            </div>
+                    </panelchildren>
+                </panel>
+                <panel title="Data Usaha" sclass="panel-head">
+                    <panelchildren>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Term Pembayaran</label>
+                                <div class="col-sm-12">
+                                    <textbox id="TermPembayaran" sclass="form-control input-sm col-sm-12"/>
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Toleransi</label>
+                                <div class="col-sm-12">
+                                    <textbox id="Toleransi" sclass="form-control input-sm col-sm-12"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Kelompok Harga</label>
+                                <div class="col-sm-12">
+                                    <listbox id="KelompokHarga" mold="select" sclass="listbocx form-control input-sm">
+                                        <listitem label="Customer Mulia"/>
+                                        <listitem label="Customer Biasa"/>
+                                    </listbox>    
+                                </div>
+                            </div> 
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Sales ID</label>
+                                <div class="col-sm-12">
+                                    <listbox id="SalesID" mold="select" sclass="listitem form-control input-sm">
+                                        <listitem label="S00012"/>
+                                        <listitem label="S00129"/>
+                                    </listbox>
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label" value="Nama Sales"/>
+                                <div class="col-sm-12">
+                                    <listbox id="SalesNama" mold="select" sclass="listitem form-control input-sm">
+                                        <listitem label="James Riady"/>
+                                        <listitem label="Sutandi"/>
+                                    </listbox>
+                                </div>
+                            </div> 
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Wilayah Sales</label>
+                                <div class="col-sm-12">
+                                    <listbox id="WilayahSales" mold="select" sclass="listbox form-control input-sm">
+                                        <listitem label="Customer Mulia"/>
+                                        <listitem label="Customer Biasa"/>
+                                    </listbox>
+                                </div>
+                            </div> 
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-12">
+                                <label class="col-sm-12 control-label" style="font-weight:bold">JADWAL KUNJUNGAN SALES</label>
+                            </div> 
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Hari</label>
+                                <div class="col-sm-12">
+                                    <listbox id="Hari" mold="select" sclass="listbox form-control input-sm">
+                                        <listitem label="Sabtu"/>
+                                        <listitem label="Minggu"/>
+                                    </listbox>
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Minggu Ke-</label>
+                                <div class="col-sm-12">
+                                    <listbox id="MingguKe" mold="select" sclass="listbox form-control input-sm">
+                                        <listitem label="Customer Mulia"/>
+                                        <listitem label="Customer Biasa"/>
+                                    </listbox>
+                                </div>
+                            </div> 
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-12">
+                                <label class="col-sm-12 control-label" style="font-weight:bold">JADWAL KUNJUNGAN KOLEKTOR</label>
+                            </div> 
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Hari</label>
+                                <div class="col-sm-12">
+                                    <listbox id="HariK" mold="select" sclass="listbox form-control input-sm">
+                                        <listitem label="Sabtu"/>
+                                        <listitem label="Minggu"/>
+                                    </listbox>
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Minggu Ke-</label>
+                                <div class="col-sm-12">
+                                    <listbox id="MingguKeK" mold="select" sclass="listbox form-control input-sm">
+                                        <listitem label="Sabtu"/>
+                                        <listitem label="Minggu"/>
+                                    </listbox>
+                                </div>
+                            </div> 
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Kolektor ID</label>
+                                <div class="col-sm-12">
+                                    <listbox id="KolektorID" mold="select" sclass="listbox form-control input-sm">
+                                        <listitem label="Sabtu"/>
+                                        <listitem label="Minggu"/>
+                                    </listbox>
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Nama Kolektor</label>
+                                <div class="col-sm-12">
+                                    <listbox id="KolektorNama" mold="select" sclass="listbox form-control input-sm">
+                                        <listitem label="Sabtu"/>
+                                        <listitem label="Minggu"/>
+                                    </listbox>
+                                </div>
+                            </div> 
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Wilayah Kolektor</label>
+                                <div class="col-sm-12">
+                                    <listbox id="WilayahKolektor" mold="select" sclass="listbox form-control input-sm">
+                                        <listitem label="Sabtu"/>
+                                        <listitem label="Minggu"/>
+                                    </listbox>
+                                </div>
+                            </div> 
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Mata Uang</label>
+                                <div class="col-sm-12">
+                                    <listbox id="MataUang" mold="select" sclass="listbox form-control input-sm">
+                                        <listitem label="Sabtu"/>
+                                        <listitem label="Minggu"/>
+                                    </listbox>
+                                </div>
+                            </div> 
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-12">
+                                <label class="col-sm-12 control-label" style="font-weight:bold">PLAFON</label>
+                            </div> 
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Piutang</label>
+                                <div class="col-sm-12">
+                                    <textbox id="Piutang" sclass="form-control input-sm" value="0"/>
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Nota Penjualan</label>
+                                <div class="col-sm-12">
+                                    <textbox id="NotaPenjualan" sclass="form-control input-sm" value="0"/>
+                                </div>
+                            </div> 
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Utang</label>
+                                <div class="col-sm-12">
+                                    <textbox id="Utang" sclass="form-control input-sm" value="0"/>
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Nota Pembelian</label>
+                                <div class="col-sm-12">
+                                    <textbox id="NotaPembelian" sclass="form-control input-sm" value="0"/>
+                                </div>
+                            </div> 
+                        </div>
+                    </panelchildren>
+                </panel>
+            </div>
+        </div>
+        <div sclass="row" style="margin:0 auto;">
+            <div sclass="col-md-12 col-xs-12">
+                <panel title="Data Nilai Transaksi" sclass="panel-head">
+                    <panelchildren>
+                        <div sclass="row">
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Total Nilai Transaksi</label>
+                                <div class="col-sm-12">
+                                    <textbox id="TNT" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Jlh Fak. Penjualan Belum Lunas</label>
+                                <div class="col-sm-12">
+                                    <textbox id="JFPJBL" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Tgl Penjualan Terakhir</label>
+                                <div class="col-sm-12">
+                                    <textbox id="TPJT" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Giro Diterima</label>
+                                <div class="col-sm-12">
+                                    <textbox id="GD" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Piutang Jatuh Tempo</label>
+                                <div class="col-sm-12">
+                                    <textbox id="PJT" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Jlh Fak. Penjualan Jatuh Tempo</label>
+                                <div class="col-sm-12">
+                                    <textbox id="JFPJT" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Grand Total Penjualan</label>
+                                <div class="col-sm-12">
+                                    <textbox id="GTP" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Grand Total Retur Penjualan</label>
+                                <div class="col-sm-12">
+                                    <textbox id="GTRP" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Total Hutang Saat Ini</label>
+                                <div class="col-sm-12">
+                                    <textbox id="THSI" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Jlh Fak. Pembelian Belum Lunas</label>
+                                <div class="col-sm-12">
+                                    <textbox id="JFPBBL" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Tgl Pembelian Terakhir</label>
+                                <div class="col-sm-12">
+                                    <textbox id="TPBT" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Giro Bayar</label>
+                                <div class="col-sm-12">
+                                    <textbox id="GB" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Hutang Jatuh Tempo</label>
+                                <div class="col-sm-12">
+                                    <textbox id="HJT" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Jlh Fak. Pembelian Jatuh Tempo</label>
+                                <div class="col-sm-12">
+                                    <textbox id="JFPBJT" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Grand Total Pembelian</label>
+                                <div class="col-sm-12">
+                                    <textbox id="GTPB" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-3">
+                                <label class="col-sm-12 control-label">Grand Total Retur Pembelian</label>
+                                <div class="col-sm-12">
+                                    <textbox id="GTRPB" sclass="form-control input-sm" value="0" disabled="true"/> 
+                                </div>
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="pull-right">
+                                <button sclass="save btn btn-primary btn-sm col-xs-4" label="Save"/>
+                                <button sclass="browse btn btn-primary btn-sm col-xs-4" label="Browse"/>
+<!--                                    <button sclass="cancel btn btn-primary btn-lg col-xs-4">Cancel</button>
+                                <button sclass="delete btn btn-danger btn-lg col-xs-4">Delete</button>-->
+
+                            </div>
+                        </div>
+                    </panelchildren>
+                </panel>
+            </div>
+        </div>
+    </vlayout>
+</zk>
