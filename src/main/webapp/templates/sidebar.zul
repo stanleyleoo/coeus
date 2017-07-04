@@ -6,9 +6,9 @@
             <navitem label="Profil Perusahaan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Perusahaan', tabPath='pages/profil perusahaan.zul')"/>
             <navitem label="Kategori Perusahaan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kategori Perusahaan', tabPath='pages/kategoriPerusahaan.zul')"/>
             <navitem label="Profil Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Produk', tabPath='profil perusahaan.zul')"/>
-            <navitem label="Kategori Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kategori Produk', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Kategori Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kategori Produk', tabPath='pages/KategoriProduk.zul')"/>
             <navitem label="Profil Produk" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Profil Pegawai', tabPath='profil perusahaan.zul')"/>
-            <navitem label="Sales Group" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Sales Group', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Sales Group" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Sales Group', tabPath='pages/SalesGroup.zul')"/>
             <navitem label="Geografis" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Geo Data', tabPath='pages/geoData.zul')"/>
         </nav>
         <nav label="Keuangan" iconSclass="z-icon-money">

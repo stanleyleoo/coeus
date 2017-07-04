@@ -1,93 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<zk xmlns="http://www.zkoss.org/2005/zul">
-    <div sclass="right_col" 
+<zk xmlns:n="native">
+<style dynamic="true">
+        .panel-header{
+            margin: 2vh 0 0 43vh;
+            font-size:20px; 
+            border-radius: 0;
+        }
+        .panel-header > .panel-heading{
+            color: #2a2951;
+            border-radius: 0;
+            border-color: #e5e5e5;
+        }
+        .panel-header > .panel-body{
+            background-color: #fff;
+        }
+        .btn{
+            margin:0 2vh;
+            width:9vh;
+            text-align:center;
+        }
+    @media screen and (max-width: 1024px) {
+        .panel-header{
+            margin: 2vh 0 0 0;
+            font-size:20px;
+        }
+    }
+</style>
+    <vlayout sclass="right_col container-fluid" id="layoutWindow"
+         height="100%" width="100%"
          apply="org.zkoss.bind.BindComposer" 
          validationMessages="@id('vmsgs')" 
          viewModel="@id('vm') @init('com.lemonhexa.web.ui.web.GeodataVm')">
         <div sclass="row">
-            <div sclass="col-md-12 col-sm-12 col-xs-12">
-                <div sclass="x_panel">
-                    <include src="templates/toolbar.zul"/>
-                    <div sclass="x_content">
-                        <!--class="form-horizontal"--> 
-                        <grid sclass="tblWithoutHover" xmlns:n="native">
-                            <columns class="col-md-12">
-                                <column class="col-md-12"/>
-                            </columns> 
-
-                            <rows>      
-                                
-                                
-                                <row>
-                                    <div class="form-group row">
-                                        <n:label for="txtDistrict" class="col-sm-2 control-label">District</n:label>
-                                        <hlayout sclass="col-sm-2">
-                                            <textbox id="txtDistrict" maxlength="30" sclass="form-control input-sm" hflex="1" 
-                                                      errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.district) @save(vm.selected.district, before='saveClick')  @validator('beanValidator')"/>
-                                        </hlayout>
-                                    </div>
-                                </row>
-                                
-                                <row>
-                                    <div class="form-group row">
-                                        <n:label for="txtRegency" class="col-sm-2 control-label">Regency</n:label>
-                                        <hlayout sclass="col-sm-2">
-                                            <textbox id="txtRegency" sclass="form-control input-sm" hflex="1" maxlength="11" 
-                                                      errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.regency) @save(vm.selected.regency, before='saveClick')  @validator('beanValidator')"/>
-                                        </hlayout>
-                                    </div>
-                                </row>
-                                
-                                <row>
-                                    <div class="form-group row">
-                                        <n:label for="txtProvince" class="col-sm-2 control-label">Province</n:label>
-                                        <hlayout sclass="col-sm-2">
-                                            <textbox id="txtProvince" maxlength="30" sclass="form-control input-sm" hflex="1" 
-                                                      errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.province) @save(vm.selected.province, before='saveClick')  @validator('beanValidator')"/>
-                                        </hlayout>
-                                    </div>
-                                </row>
-                                
-                                <row>
-                                    <div class="form-group row">
-                                        <n:label for="txtCountry" class="col-sm-2 control-label">Country</n:label>
-                                        <hlayout sclass="col-sm-2">
-                                            <textbox id="txtCountry" sclass="form-control input-sm" hflex="1" maxlength="11" 
-                                                      errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.country) @save(vm.selected.country, before='saveClick')  @validator('beanValidator')"/>
-                                        </hlayout>
-                                    </div>
-                                </row>
-                                
-                                <row>
-                                    <div class="form-group row">
-                                        <n:label for="txtNote" class="col-sm-2 control-label">Note</n:label>
-                                        <hlayout sclass="col-sm-2">
-                                            <textbox id="txtNote" maxlength="30" sclass="form-control input-sm" hflex="1" 
-                                                     errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.note) @save(vm.selected.note, before='saveClick')  @validator('beanValidator')"/>
-                                        </hlayout>
-                                    </div>
-                                </row>
-                           
-                                <row>
-                                    <div class="form-group row">
-                                        <n:label for="txtVoidReason" class="col-sm-2 control-label">Void Reason</n:label>
-                                        <hlayout sclass="col-sm-2">
-                                            <textbox id="txtVoidReason" maxlength="30" sclass="form-control input-sm" hflex="1" 
-                                                     errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.voidReason) @save(vm.selected.voidReason, before='saveClick')  @validator('beanValidator')"/>
-                                        </hlayout>
-                                    </div>
-                                </row>
-                                
-                                
-                            </rows>
-                        </grid>
-    
-                    </div>
-                </div>
+            <div sclass="page-header col-md-12 col-xs-12">
+                    <label value="Sales Group"/>
             </div>
         </div>
-
-            
-    </div>
+        <div sclass="row container-fluid" style="margin:0 auto;">
+            <div sclass="col-md-8 col-xs-12">
+                <panel title="Sales Group" sclass="panel-header">
+                    <panelchildren>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">District</label>
+                            <hlayout sclass="col-sm-12">
+                                <textbox id="txtDistrict" maxlength="30" sclass="form-control input-sm" hflex="1" 
+                                          errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.district) @save(vm.selected.district, before='saveClick')  @validator('beanValidator')"/>
+                            </hlayout>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Regency</label>
+                            <hlayout sclass="col-sm-12">
+                                <textbox id="txtRegency" sclass="form-control input-sm" hflex="1" maxlength="11" 
+                                          errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.regency) @save(vm.selected.regency, before='saveClick')  @validator('beanValidator')"/>
+                            </hlayout>
+                        </div>
+                        <div class="form-group row">
+                           <label class="col-sm-12 control-label">Province</label>
+                           <hlayout sclass="col-sm-12">
+                                <textbox id="txtProvince" maxlength="30" sclass="form-control input-sm" hflex="1" 
+                                          errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.province) @save(vm.selected.province, before='saveClick')  @validator('beanValidator')"/>
+                            </hlayout>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Country</label>
+                            <hlayout sclass="col-sm-12">
+                                <textbox id="txtCountry" sclass="form-control input-sm" hflex="1" maxlength="11" 
+                                          errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.country) @save(vm.selected.country, before='saveClick')  @validator('beanValidator')"/>
+                            </hlayout>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Note</label>
+                            <hlayout sclass="col-sm-12">
+                                <textbox id="txtNote" maxlength="30" sclass="form-control input-sm" hflex="1" 
+                                         errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.note) @save(vm.selected.note, before='saveClick')  @validator('beanValidator')"/>
+                            </hlayout>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Void Reason</label>
+                            <hlayout sclass="col-sm-12">
+                                <textbox rows="2" id="txtVoidReason" maxlength="30" sclass="form-control input-sm" hflex="1" 
+                                         errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.voidReason) @save(vm.selected.voidReason, before='saveClick')  @validator('beanValidator')"/>
+                            </hlayout>
+                        </div>
+                        <div class="row pull-right">
+                            <button sclass="save btn btn-primary btn-sm col-md-4 col-xs-6" label="Save"/>
+                            <button sclass="browse btn btn-primary btn-sm col-md-4 col-xs-6" label="Browse"/>
+    <!--                    <button sclass="cancel btn btn-primary btn-sm col-md-4 col-xs-6">Cancel</button>
+                            <button sclass="delete btn btn-danger btn-sm col-md-4 col-xs-6">Delete</button>-->
+                        </div>
+                    </panelchildren>
+                </panel>
+            </div>
+        </div>
+    </vlayout>
 </zk>
