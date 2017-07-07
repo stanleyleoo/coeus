@@ -5,6 +5,7 @@
  */
 package com.lemonhexa.web.component;
 
+import com.lemonhexa.web.component.filter.CompanyCategoryFilter;
 import com.lemonhexa.web.entity.Companycategory;
 import com.lemonhexa.web.helper.AppUtil;
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class CompanyCategoryBrowseData {
     private Companycategory companyCategorySelected;
     private String looked;
     private List<Integer> pageSize;
-//    private GeodataFilter filter = new GeodataFilter();
+    private CompanyCategoryFilter filter = new CompanyCategoryFilter();
 
     @Init
     public void init() {
@@ -56,28 +57,28 @@ public class CompanyCategoryBrowseData {
         setCompanycategory(new ListModelList<>(getFilterCompanyCategory(getLooked())));
     }
     
-//    @Command
-//    @NotifyChange({"companycategory"})
-//    public void changeListSplit() {
-//        setGeodata(new ListModelList<>(getFilterGeodataSplit(getFilter())));
-//    }
+    @Command
+    @NotifyChange({"companycategory"})
+    public void changeListSplit() {
+        setCompanycategory(new ListModelList<>(getFilterCompanyCategorySplit(getFilter())));
+    }
     
-//    public static List<Geodata> getFilterGeodataSplit(GeodataFilter filter){
-//        List<Geodata> data = new ArrayList<>();
-//        List<Geodata> geodata = AppUtil.getWebService().getGeodatas();
-//        String province = filter.getProvince().toLowerCase();
-//        String country = filter.getCountry().toLowerCase();
-//
-//        for (Iterator<Geodata> i = geodata.iterator(); i.hasNext();) {
-//            Geodata tmp = i.next();
-//            if (tmp.getProvince().toLowerCase().contains(province) && tmp.getCountry().toLowerCase().contains(country)
-//                    ) {
-//                data.add(tmp);
-//            }
-//
-//        }
-//        return data;
-//    }
+    public static List<Companycategory> getFilterCompanyCategorySplit(CompanyCategoryFilter filter){
+        List<Companycategory> data = new ArrayList<>();
+        List<Companycategory> companycategory = AppUtil.getWebService().getCompanycategories();
+        String category = filter.getCategory().toLowerCase();
+        String sub1 = filter.getSub1().toLowerCase();
+
+        for (Iterator<Companycategory> i = companycategory.iterator(); i.hasNext();) {
+            Companycategory tmp = i.next();
+            if (tmp.getCategory().toLowerCase().contains(category) && tmp.getSub1().toLowerCase().contains(sub1)
+                    ) {
+                data.add(tmp);
+            }
+
+        }
+        return data;
+    }
     
     public static List<Companycategory> getFilterCompanyCategory(String companyCategoryFilter) {
         List<Companycategory> companycategorylist = new ArrayList<>();
@@ -100,6 +101,10 @@ public class CompanyCategoryBrowseData {
     
         
     //getter & setter
+
+    public CompanyCategoryFilter getFilter() {
+        return filter;
+    }
 
     public ListModelList<Companycategory> getCompanycategory() {
         return companycategory;

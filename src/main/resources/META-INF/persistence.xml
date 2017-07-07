@@ -4,6 +4,9 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.lemonhexa.web.entity.Geodata</class>
     <class>com.lemonhexa.web.entity.Companycategory</class>
+    <class>com.lemonhexa.web.entity.Currency</class>
+    <class>com.lemonhexa.web.entity.Profilelocation</class>
+    <class>com.lemonhexa.web.entity.Accountgroup</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/lemonhexa"/>

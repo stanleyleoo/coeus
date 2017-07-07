@@ -32,12 +32,12 @@
                 <auxhead>
                     
                     <auxheader colspan="1" align="center">
-                        <textbox instant="true" width="75%"  
+                        <textbox instant="true" width="75%" value="@bind(vm.filter.category)" onChange="@command('changeListSplit')"  
 					 />
                     </auxheader>
                     
                     <auxheader colspan="1" align="center">
-                        <textbox instant="true" width="75%"  
+                        <textbox instant="true" width="75%" value="@bind(vm.filter.sub1)" onChange="@command('changeListSplit')" 
 					 />
                     </auxheader>
                     
