@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <button sclass="save btn btn-primary btn-sm col-md-4 col-xs-6" 
+            visible="@load(vm.saveState.visible)"  
+            disabled="@load(vm.saveState.disabled)" 
+            onClick="@command('saveClick')"
+            label="Save" />
+    <button sclass="browse btn btn-primary btn-sm col-md-4 col-xs-6" 
+            visible="@load(vm.browseState.visible)"  
+            disabled="@load(vm.browseState.disabled)" 
+            onClick="@command('browseClick')"
+            label="Browse" />
+    <button sclass="cancel btn btn-primary btn-sm col-md-4 col-xs-6" 
+            visible="@load(vm.cancelState.visible)"  
+            disabled="@load(vm.cancelState.disabled)" 
+            onClick="@command('cancelClick')"
+            label="Cancel" />
+    <button sclass="delete btn btn-danger btn-sm col-md-4 col-xs-6" 
+            visible="@load(vm.delState.visible)"  
+            disabled="@load(vm.delState.disabled)" 
+            onClick="@command('deleteClick')" 
+            label="Delete" />    
+</zk>

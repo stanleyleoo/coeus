@@ -91,7 +91,7 @@ public class GeodataVm extends Toolbar{
             }
             
             if(AppUtil.getWebService().save(getSelected())) {
-                setSelected(null);
+                setSelected(new Geodata());
                 super.saveClick();
                 Clients.showNotification("Save successful.");
             }

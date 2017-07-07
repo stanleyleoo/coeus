@@ -84,10 +84,7 @@
                             </hlayout>
                         </div>
                         <div class="row pull-right">
-                            <button sclass="save btn btn-primary btn-sm col-md-4 col-xs-6" label="Save"/>
-                            <button sclass="browse btn btn-primary btn-sm col-md-4 col-xs-6" label="Browse"/>
-    <!--                    <button sclass="cancel btn btn-primary btn-sm col-md-4 col-xs-6">Cancel</button>
-                            <button sclass="delete btn btn-danger btn-sm col-md-4 col-xs-6">Delete</button>-->
+                            <include src="templates/button.zul"/>
                         </div>
                     </panelchildren>
                 </panel>

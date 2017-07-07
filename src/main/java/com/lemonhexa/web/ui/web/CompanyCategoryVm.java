@@ -6,7 +6,6 @@
 package com.lemonhexa.web.ui.web;
 
 import com.lemonhexa.web.entity.Companycategory;
-import com.lemonhexa.web.entity.Geodata;
 import com.lemonhexa.web.helper.AppUtil;
 import com.lemonhexa.web.templates.Toolbar;
 import java.util.List;
@@ -81,7 +80,7 @@ public class CompanyCategoryVm extends Toolbar{
             }
             
             if(AppUtil.getWebService().save(getSelected())) {
-                setSelected(null);
+                setSelected(new Companycategory());
                 super.saveClick();
                 Clients.showNotification("Save successful.");
             }
