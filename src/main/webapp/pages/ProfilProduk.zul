@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns:n="native">
+<style dynamic="true">
+        .panel-head{
+            font-size:20px; 
+            border-radius: 0;
+        }
+        .panel-head > .panel-heading{
+            color: #2a2951;
+            border-radius: 0;
+            border-color: #e5e5e5;
+        }
+        .panel-head > .panel-body{
+            background-color: #fff;
+        }
+        .btn{
+            margin:0 3vh;
+            width:12vh;
+            text-align:center;
+        }
+        .header{
+            font-weight:bold;
+        }
+    @media screen and (max-width: 1024px) {
+        .panel-head{
+            font-size:20px;
+        }
+    }
+</style>
+    <vlayout sclass="right_col container-fluid" id="layoutWindow"
+         height="100%" width="100%"
+         apply="org.zkoss.bind.BindComposer" 
+         validationMessages="@id('vmsgs')" 
+         viewModel="@id('vm') @init('com.lemonhexa.web.ui.web.GeodataVm')">
+        <div sclass="row">
+            <div sclass="page-header col-md-12 col-xs-12">
+                <label value="Profil Produk"/>
+            </div>
+        </div>
+        <div sclass="row" style="margin:0 auto;">
+            <div class="col-md-6 col-xs-12">    
+                <panel title="Data Umum" sclass="panel-head">
+                    <panelchildren>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Kode Barang</label>
+                            <div class="col-sm-8">
+                                <listbox mold="select" id="KodeBarang" sclass="form-control input-sm">
+                                    <listitem label="IT"/>
+                                </listbox>    
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                        <checkbox class="input-group-addon" />
+                                        <textbox class="form-control" value="Active" disabled="true" />
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Nama Barang</label>
+                            <div class="col-sm-12">
+                                <listbox mold="select" id="NamaBarang" sclass="form-control input-sm">
+                                    <listitem label="IT"/>
+                                </listbox>    
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Departemen</label>
+                            <div class="col-sm-12">
+                                <listbox mold="select" id="Departemen" sclass="form-control input-sm">
+                                    <listitem label="IT"/>
+                                </listbox>    
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Merk</label>
+                            <div class="col-sm-12">
+                                <listbox mold="select" id="Merk" sclass="form-control input-sm">
+                                    <listitem label="IT"/>
+                                </listbox>    
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Kategori</label>
+                            <div class="col-sm-12">
+                                <listbox mold="select" id="Kategori" sclass="form-control input-sm">
+                                    <listitem label="IT"/>
+                                </listbox>    
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Sub 1</label>
+                            <div class="col-sm-12">
+                                <listbox mold="select" id="Sub1" sclass="form-control input-sm">
+                                    <listitem label="IT"/>
+                                </listbox>    
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Sub 2</label>
+                            <div class="col-sm-12">
+                                <listbox mold="select" id="Sub2" sclass="form-control input-sm">
+                                    <listitem label="IT"/>
+                                </listbox>    
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Satuan Kecil</label>
+                                <div class="col-sm-12">
+                                    <listbox mold="select" id="SatuanKecil" sclass="form-control input-sm">
+                                        <listitem label="Unit"/>
+                                    </listbox>    
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">&#xa0;</label>
+                                <div class="col-sm-12" style="margin-top:4px">
+                                    <label>= 1 Unit</label>    
+                                </div>
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Satuan Sedang</label>
+                                <div class="col-sm-12">
+                                    <listbox mold="select" id="SatuanSedang" sclass="form-control input-sm col-sm-12">
+                                        <listitem label="Unit"/>
+                                    </listbox>
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Isi</label>
+                                <div class="col-sm-5">
+                                    <textbox id="SedangIsi" sclass="form-control input-sm col-sm-12"/>
+                                </div>
+                                <div class="col-sm-4" style="margin-top:4px">
+                                <label>Unit</label>    
+                                </div>
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Satuan Besar</label>
+                                <div class="col-sm-12">
+                                    <listbox mold="select" id="SatuanBesar" sclass="form-control input-sm col-sm-12">
+                                        <listitem label="Unit"/>
+                                    </listbox>
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Isi</label>
+                                <div class="col-sm-5">
+                                    <textbox id="BesarIsi" sclass="form-control input-sm col-sm-12"/>
+                                </div>
+                                <div class="col-sm-4" style="margin-top:4px">
+                                <label>Unit</label>    
+                                </div>
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Satuan Massa</label>
+                                <div class="col-sm-12">
+                                    <listbox mold="select" id="SatuanMassa" sclass="form-control input-sm col-sm-12">
+                                        <listitem label="Unit"/>
+                                    </listbox>
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Berat</label>
+                                <div class="col-sm-5">
+                                    <textbox id="Berat" sclass="form-control input-sm col-sm-12"/>
+                                </div>
+                                <div class="col-sm-4" style="margin-top:4px">
+                                    <label>Per Unit</label>    
+                                </div>
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <div class="col-sm-12">
+                                    <div class="input-group">
+                                        <checkbox class="input-group-addon" />
+                                        <textbox class="form-control" value="Harga Berdasarkan Massa" disabled="true" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">Jenis Produk</label>
+                                <div class="col-sm-12">
+                                    <listbox mold="select" id="JenisProduk" sclass="form-control input-sm col-sm-12">
+                                        <listitem label="Barang Jadi"/>
+                                    </listbox>
+                                </div>
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">QTY. Min(Unit)</label>
+                                <div class="col-sm-12">
+                                    <textbox id="QtyMinUnit" sclass="form-control input-sm" value="0"/> 
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">QTY. Min(Massa)</label>
+                                <div class="col-sm-12">
+                                    <textbox id="QtyMinMassa" sclass="form-control input-sm" value="0"/> 
+                                </div>
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">QTY. Max(Unit)</label>
+                                <div class="col-sm-12">
+                                    <textbox id="QtyMaxUnit" sclass="form-control input-sm" value="0"/> 
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">QTY. Max(Massa)</label>
+                                <div class="col-sm-12">
+                                    <textbox id="QtyMaxMassa" sclass="form-control input-sm" value="0"/> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Catatan</label>
+                            <div class="col-sm-12">
+                                <textbox rows="2" id="Catatan" sclass="form-control input-sm" value="0"/> 
+                            </div>
+                        </div>
+                    </panelchildren>
+                </panel>
+                <panel title="Harga Pokok" sclass="panel-head" style="height:501px">
+                    <panelchildren>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Principal</label>
+                            <div class="col-sm-11">
+                                <listbox mold="select" id="Principal" sclass="form-control input-sm">
+                                    <listitem label="Test"/>
+                                </listbox>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Kode di Principal</label>
+                            <div class="col-sm-11">
+                                <textbox id="KodeDiPrincipal" sclass="form-control input-sm"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Nama di Principal</label>
+                            <div class="col-sm-11">
+                                <textbox id="NamaDiPrincipal" sclass="form-control input-sm"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Mata Uang</label>
+                            <div class="col-sm-3">
+                                <listbox mold="select" id="MataUang" sclass="form-control input-sm">
+                                    <listitem label="IDR"/>
+                                    <listitem label="AUD"/>
+                                </listbox>
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">HPP Bruto(Kecil)</label>
+                                <div class="col-sm-12">
+                                    <textbox id="HPPBrutoKecil" sclass="form-control input-sm"/>
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">HPP Bruto(Besar)</label>
+                                <div class="col-sm-12">
+                                    <textbox id="HPPBrutoBesar" sclass="form-control input-sm"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div sclass="row">
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">HPP Rata-Rata(Kecil)</label>
+                                <div class="col-sm-12">
+                                    <textbox id="HPPRataKecil" sclass="form-control input-sm" disabled="true"/>
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-6">
+                                <label class="col-sm-12 control-label">HPP Rata-Rata(Besar)</label>
+                                <div class="col-sm-12">
+                                    <textbox id="HPPRataBesar" sclass="form-control input-sm" disabled="true"/>
+                                </div>
+                            </div>
+                        </div>
+                    </panelchildren>
+                </panel>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <panel title="Harga Jual" sclass="panel-head">
+                    <panelchildren> 
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label header">Harga Umum</label>
+                            </div>
+                            <div sclass="row">  
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Mata Uang</label>
+                                    <div class="col-sm-12">
+                                        <listbox id="HUMataUang" mold="select" sclass="listbox form-control input-sm">
+                                            <listitem label="IDR"/>
+                                        </listbox>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Harga Bruto(Unit)</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="HUHargaBrutoUnit" sclass="listbox form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Harga Bruto(Besar)</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="HUHargaBrutoBesar" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Diskon (%)</label>
+                            </div>
+                            <div sclass="row">  
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">I</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="HUDiskon1" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">II</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="HUDiskon2" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">III</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="HUDiskon3" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">IV</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="HUDiskon4" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">V</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="HUDiskon5" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group row col-md-6">
+                                    <label class="col-sm-12 control-label">Harga Netto / Unit</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="HUHargaNettoUnit" sclass="form-control input-sm" disabled="true"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-6">
+                                    <label class="col-sm-12 control-label">Harga Netto / KRT</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="HUHargaNettoKRT" sclass="form-control input-sm" disabled="true"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label header">Khusus 1</label>
+                            </div>
+                            <div sclass="row">  
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Mata Uang</label>
+                                    <div class="col-sm-12">
+                                        <listbox id="K1MataUang" mold="select" sclass="listbox form-control input-sm">
+                                            <listitem label="IDR"/>
+                                        </listbox>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Harga Bruto(Unit)</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K1HargaBrutoUnit" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Harga Bruto(Besar)</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K1HargaBrutoBesar" sclass="listbox form-control input-sm"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Diskon (%)</label>
+                            </div>
+                            <div sclass="row">  
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">I</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K1Diskon1" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">II</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K1Diskon2" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">III</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K1Diskon3" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">IV</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K1Diskon4" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">V</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K1Diskon5" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group row col-md-6">
+                                    <label class="col-sm-12 control-label">Harga Netto / Unit</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K1HargaNettoUnit" sclass="form-control input-sm" disabled="true"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-6">
+                                    <label class="col-sm-12 control-label">Harga Netto / KRT</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K1HargaNettoKRT" sclass="form-control input-sm" disabled="true"/>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label header">Khusus 2</label>
+                            </div>
+                            <div sclass="row">  
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Mata Uang</label>
+                                    <div class="col-sm-12">
+                                        <listbox id="K2MataUang" mold="select" sclass="listbox form-control input-sm">
+                                            <listitem label="IDR"/>
+                                        </listbox>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Harga Bruto(Unit)</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K2HargaBrutoUnit" sclass="listbox form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Harga Bruto(Besar)</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K2HargaBrutoBesar" sclass="listbox form-control input-sm"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Diskon (%)</label>
+                            </div>
+                            <div sclass="row">  
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">I</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K2Diskon1" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">II</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K2Diskon2" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">III</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K2Diskon3" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">IV</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K2Diskon4" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">V</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K2Diskon5" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group row col-md-6">
+                                    <label class="col-sm-12 control-label">Harga Netto / Unit</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K2HargaNettoUnit" sclass="form-control input-sm" disabled="true"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-6">
+                                    <label class="col-sm-12 control-label">Harga Netto / KRT</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K2HargaNettoKRT" sclass="form-control input-sm" disabled="true"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label header">Khusus 3</label>
+                            </div>
+                            <div sclass="row">  
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Mata Uang</label>
+                                    <div class="col-sm-12">
+                                        <listbox id="K3MataUang" mold="select" sclass="listbox form-control input-sm">
+                                            <listitem label="IDR"/>
+                                        </listbox>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Harga Bruto(Unit)</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K3HargaBrutoUnit" sclass="listbox form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Harga Bruto(Besar)</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K3HargaBrutoBesar" sclass="listbox form-control input-sm"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Diskon (%)</label>
+                            </div>
+                            <div sclass="row">  
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">I</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K3Diskon1" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">II</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K3Diskon2" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">III</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K3Diskon3" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">IV</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K3Diskon4" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">V</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K3Diskon5" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group row col-md-6">
+                                    <label class="col-sm-12 control-label">Harga Netto / Unit</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K3HargaNettoUnit" sclass="form-control input-sm" disabled="true"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-6">
+                                    <label class="col-sm-12 control-label">Harga Netto / KRT</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K3HargaNettoKRT" sclass="form-control input-sm" disabled="true"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label header">Khusus 4</label>
+                            </div>
+                            <div sclass="row">  
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Mata Uang</label>
+                                    <div class="col-sm-12">
+                                        <listbox id="K4MataUang" mold="select" sclass="listbox form-control input-sm">
+                                            <listitem label="IDR"/>
+                                        </listbox>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Harga Bruto(Unit)</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K4HargaBrutoUnit" sclass="listbox form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Harga Bruto(Besar)</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K4HargaBrutoBesar" sclass="listbox form-control input-sm"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Diskon (%)</label>
+                            </div>
+                            <div sclass="row">  
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">I</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K4Diskon1" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">II</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K4Diskon2" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">III</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K4Diskon3" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">IV</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K4Diskon4" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">V</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K4Diskon5" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group row col-md-6">
+                                    <label class="col-sm-12 control-label">Harga Netto / Unit</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K4HargaNettoUnit" sclass="form-control input-sm" disabled="true"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-6">
+                                    <label class="col-sm-12 control-label">Harga Netto / KRT</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K4HargaNettoKRT" sclass="form-control input-sm" disabled="true"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label header">Khusus 5</label>
+                            </div>
+                            <div sclass="row">  
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Mata Uang</label>
+                                    <div class="col-sm-12">
+                                        <listbox id="K5MataUang" mold="select" sclass="listbox form-control input-sm">
+                                            <listitem label="IDR"/>
+                                        </listbox>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Harga Bruto(Unit)</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K5HargaBrutoUnit" sclass="listbox form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-4">
+                                    <label class="col-sm-12 control-label">Harga Bruto(Besar)</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K5HargaBrutoBesar" sclass="listbox form-control input-sm"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-12 control-label">Diskon (%)</label>
+                            </div>
+                            <div sclass="row">  
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">I</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K5Diskon1" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">II</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K5Diskon2" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">III</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K5Diskon3" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">IV</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K5Diskon4" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-2">
+                                    <label class="col-sm-12 control-label">V</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K5Diskon5" sclass="form-control input-sm"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group row col-md-6">
+                                    <label class="col-sm-12 control-label">Harga Netto / Unit</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K5HargaNettoUnit" sclass="form-control input-sm" disabled="true"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-md-6">
+                                    <label class="col-sm-12 control-label">Harga Netto / KRT</label>
+                                    <div class="col-sm-12">
+                                        <textbox id="K5HargaNettoKRT" sclass="form-control input-sm" disabled="true"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pull-right">
+                                <button sclass="save btn btn-primary btn-sm col-md-4 col-xs-6" label="Save"/>
+                                <button sclass="browse btn btn-primary btn-sm col-md-4 col-xs-6" label="Browse"/>
+        <!--                     <button sclass="cancel btn btn-primary btn-sm col-md-4 col-xs-6">Cancel</button>
+                                <button sclass="delete btn btn-danger btn-sm col-md-4 col-xs-6">Delete</button>-->
+                            </div>
+                    </panelchildren>
+                </panel>
+            </div>
+        </div>
+    </vlayout>
+</zk>

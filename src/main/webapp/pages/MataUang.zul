@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns:n="native">
+<style dynamic="true">
+        .panel-header{
+            margin: 2vh 0 0 43vh;
+            font-size:20px; 
+            border-radius: 0;
+        }
+        .panel-header > .panel-heading{
+            color: #2a2951;
+            border-radius: 0;
+            border-color: #e5e5e5;
+        }
+        .panel-header > .panel-body{
+            background-color: #fff;
+        }
+        .btn{
+            margin:0 2vh;
+            width:9vh;
+            text-align:center;
+        }
+    @media screen and (max-width: 1024px) {
+        .panel-header{
+            margin: 2vh 0 0 0;
+            font-size:20px;
+        }
+    }
+</style>
+<vlayout sclass="right-col container-fluid" id="layoutWindow" apply="org.zkoss.bind.BindComposer"
+	height="100%" width="100%" validationMessages="@id('vmsgs')" 
+         viewModel="@id('vm') @init('com.lemonhexa.web.ui.web.CompanyCategoryVm')">
+    <div sclass="row">
+        <div sclass="page-header col-md-12 col-xs-12">
+                <label value="Mata Uang"/>
+        </div>
+    </div>
+    <div sclass="row container-fluid" style="margin:0 auto;">
+        <div sclass="col-md-8 col-xs-12">
+            <panel title="Mata Uang" sclass="panel-header">
+                <panelchildren>
+                    <div class="form-group row">
+                        <label class="col-sm-12 control-label">Record Id</label>
+                        <hlayout sclass="col-sm-12">
+                             <textbox id="txtRecordId" sclass="form-control input-sm" hflex="1" maxlength="11" 
+                                              errorMessage="@load(vmsgs[self])" disabled="true" value="@bind(vm.selected.recordId) @save(vm.selected.recordId, before='saveClick')  @validator('beanValidator')"/>
+                        </hlayout>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-12 control-label">Negara</label>
+                        <hlayout sclass="col-sm-12">
+                             <textbox id="txtNegara" sclass="form-control input-sm" hflex="1" maxlength="11" 
+                                              errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.category) @save(vm.selected.category, before='saveClick')  @validator('beanValidator')"/>
+                        </hlayout>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-12 control-label">Currency</label>
+                        <hlayout sclass="col-sm-12">
+                            <textbox id="txtCurrency" sclass="form-control input-sm" hflex="1" maxlength="11" 
+                                              errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.sub1) @save(vm.selected.sub1, before='saveClick')  @validator('beanValidator')"/>
+                        </hlayout>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-12 control-label">Nilai Tukar - IDR</label>
+                        <hlayout sclass="col-sm-12">
+                            <textbox id="txtNilaiTukar" sclass="form-control input-sm" hflex="1" maxlength="11" 
+                                              errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.sub2) @save(vm.selected.sub2, before='saveClick')  @validator('beanValidator')"/>
+                        </hlayout>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <checkbox class="input-group-addon" />
+                                <textbox class="form-control" value="Inactive" disabled="true"/>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-12 control-label">Notes</label>
+                        <hlayout sclass="col-sm-12">
+                            <textbox rows="2" id="txtNotes" sclass="form-control input-sm" hflex="1" maxlength="11" 
+                                              errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.notes) @save(vm.selected.notes, before='saveClick')  @validator('beanValidator')"/>
+                        </hlayout>
+                    </div>  
+                    <div class="row pull-right">
+                        <button sclass="save btn btn-primary btn-sm col-md-4 col-xs-6" label="Save"/>
+                        <button sclass="browse btn btn-primary btn-sm col-md-4 col-xs-6" label="Browse"/>
+<!--                    <button sclass="cancel btn btn-primary btn-sm col-md-4 col-xs-6">Cancel</button>
+                        <button sclass="delete btn btn-danger btn-sm col-md-4 col-xs-6">Delete</button>-->
+
+                    </div>
+                </panelchildren>
+            </panel>
+        </div>
+    </div>
+</vlayout>
+</zk>

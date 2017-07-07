@@ -24,6 +24,7 @@
             height:200px;
             width:200px;
             border:1px dotted black;
+            background-size: 200px 200px;
         }
     @media screen and (max-width: 1024px) {
         .panel-header{
@@ -55,7 +56,7 @@
                         <label class="col-sm-12 control-label">Nama</label>
                         <hlayout sclass="col-sm-12">
                              <textbox id="txtNama" sclass="form-control input-sm" hflex="1" maxlength="11" 
-                                              errorMessage="@load(vmsgs[self])" disabled="true" value="@bind(vm.selected.recordId) @save(vm.selected.recordId, before='saveClick')  @validator('beanValidator')"/>
+                                              errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.recordId) @save(vm.selected.recordId, before='saveClick')  @validator('beanValidator')"/>
                         </hlayout>
                     </div>
                     <div class="form-group row">
