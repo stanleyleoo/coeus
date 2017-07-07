@@ -2,6 +2,7 @@ package com.lemonhexa.web.service;
 
 import com.lemonhexa.web.entity.Companycategory;
 import com.lemonhexa.web.entity.Geodata;
+import com.lemonhexa.web.entity.Salesgroup;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -68,5 +69,17 @@ public class ServiceDaoImpl implements ServiceDao {
     public List<Companycategory> getCompanycategories() {
         List<Companycategory> listCompanycategory = getCurrentSession().createQuery("FROM Companycategory a ORDER BY a.recordId ASC").list();
         return listCompanycategory;
+    }
+
+    @Override
+    public Salesgroup getSalesgroupById(Integer recordId) {
+       Salesgroup salesgroup = (Salesgroup) getCurrentSession().get(Salesgroup.class, recordId);
+        return salesgroup;
+    }
+
+    @Override
+    public List<Salesgroup> getSalesgroups() {
+        List<Salesgroup> listSalesgroup = getCurrentSession().createQuery("FROM Salesgroup a ORDER BY a.recordId ASC").list();
+        return listSalesgroup;
     }
 }
