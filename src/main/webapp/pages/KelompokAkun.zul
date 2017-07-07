@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns:n="native">
+<style dynamic="true">
+        .panel-header{
+            margin: 2vh 0 0 43vh;
+            font-size:20px; 
+            border-radius: 0;
+        }
+        .panel-header > .panel-heading{
+            color: #2a2951;
+            border-radius: 0;
+            border-color: #e5e5e5;
+        }
+        .panel-header > .panel-body{
+            background-color: #fff;
+        }
+        .btn{
+            margin:0 2vh;
+            width:9vh;
+            text-align:center;
+        }
+    @media screen and (max-width: 1024px) {
+        .panel-header{
+            margin: 2vh 0 0 0;
+            font-size:20px;
+        }
+    }
+</style>
+    <vlayout sclass="right_col container-fluid" id="layoutWindow"
+         height="100%" width="100%"
+         apply="org.zkoss.bind.BindComposer" 
+         validationMessages="@id('vmsgs')" 
+         viewModel="@id('vm') @init('com.lemonhexa.web.ui.web.GeodataVm')">
+        <div sclass="row">
+            <div sclass="page-header col-md-12 col-xs-12">
+                    <label value="Kelompok Akun"/>
+            </div>
+        </div>
+        <div sclass="row container-fluid" style="margin:0 auto;">
+            <div sclass="col-md-8 col-xs-12">
+                <panel title="Kelompok Akun" sclass="panel-header">
+                    <panelchildren>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Nama Kelompok</label>
+                            <hlayout sclass="col-sm-12">
+                                <listbox mold="select" id="txtKelompok" sclass="list-box form-control input-sm" hflex="1" 
+                                          errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.district) @save(vm.selected.district, before='saveClick')  @validator('beanValidator')">
+                                    <listitem label="Aktiva Lancar"/>
+                                    <listitem label="Aktiva Tidak Lancar"/>
+                                    <listitem label="Passiva Lancar"/>
+                                    <listitem label="Passiva Tidak Lancar"/>
+                                    <listitem label="Modal"/>
+                                    <listitem label="Pendapatan"/>
+                                    <listitem label="Harga Pokok Penjualan"/>
+                                    <listitem label="Pembelian"/>
+                                    <listitem label="Biaya Operasional"/>
+                                    <listitem label="Pajak"/>
+                                    <listitem label="Lainnya"/>
+                                </listbox>
+                            </hlayout>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Sub Kelompok</label>
+                            <hlayout sclass="col-sm-12">
+                                <textbox id="txtSubKelompok" sclass="form-control input-sm" hflex="1" maxlength="100" 
+                                          errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.regency) @save(vm.selected.regency, before='saveClick')  @validator('beanValidator')"/>
+                            </hlayout>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 control-label">Catatan</label>
+                            <hlayout sclass="col-sm-12">
+                                <textbox rows="2" id="txtCatatan" maxlength="30" sclass="form-control input-sm" hflex="1" 
+                                         errorMessage="@load(vmsgs[self])" value="@bind(vm.selected.voidReason) @save(vm.selected.voidReason, before='saveClick')  @validator('beanValidator')"/>
+                            </hlayout>
+                        </div>
+                        <div class="row pull-right">
+                            <include src="templates/button.zul"/>
+                        </div>
+                    </panelchildren>
+                </panel>
+            </div>
+        </div>
+    </vlayout>
+</zk>

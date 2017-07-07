@@ -13,7 +13,7 @@
             <navitem label="Geografis" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Geo Data', tabPath='pages/geoData.zul')"/>
         </nav>
         <nav label="Keuangan" iconSclass="z-icon-money">
-            <navitem label="Kelompok Akun" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kelompok Akun', tabPath='profil perusahaan.zul')"/>
+            <navitem label="Kelompok Akun" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Kelompok Akun', tabPath='pages/KelompokAkun.zul')"/>
             <navitem label="Nomor Perkiraan" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Nomor Perkiraan', tabPath='profil perusahaan.zul')"/>
             <navitem label="Mata Uang" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Mata Uang', tabPath='pages/MataUang.zul')"/>
             <navitem label="Jurnal" iconSclass="z-icon-angle-double-right" onClick="@command('addTab', tabName='Jurnal', tabPath='profil perusahaan.zul')"/>

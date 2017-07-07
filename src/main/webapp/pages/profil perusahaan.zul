@@ -71,31 +71,25 @@
                                 <div class="col-sm-12">
                                      <bandbox id="DataGeografis" mold="rounded" autodrop="true" hflex="1">
                                         <bandpopup>
-                                            <listbox id="DataGeografislb" mold="paging" width="620px" autopaging="true"
-                                            onSelect="DataGeografis.value=self.selectedItem.label; DataGeografis.close();">
+                                            <listbox mold="paging" width="620px" autopaging="true"
+                                            onSelect="DataGeografis.value=self.selectedItem.label;DataGeografis.close();">
                                                 <listhead>
-                                                    <listheader>Kecamatan</listheader>
-                                                    <listheader>Kabupaten</listheader>
-                                                    <listheader>Propinsi</listheader>
-                                                    <listheader>Negara</listheader>
+                                                    <listheader label="Kecamatan"/>
+                                                    <listheader label="Kabupaten"/>
+                                                    <listheader label="Propinsi"/>
+                                                    <listheader label="Negara"/>
                                                 </listhead>
                                                 <listitem>
-                                                    <listcell>Customer</listcell>
-                                                    <listcell>Customer</listcell>
-                                                    <listcell>Customer</listcell>
-                                                    <listcell>Customer</listcell>
+                                                    <listcell label="Kecamatan"/>
+                                                    <listcell label="Kabupaten"/>
+                                                    <listcell label="Propinsi"/>
+                                                    <listcell label="Negara"/>
                                                 </listitem>
                                                 <listitem>
-                                                    <listcell>Customer</listcell>
-                                                    <listcell>Customer</listcell>
-                                                    <listcell>Customer</listcell>
-                                                    <listcell>Customer</listcell>
-                                                </listitem>
-                                                <listitem>
-                                                    <listcell>Customer</listcell>
-                                                    <listcell>Customer</listcell>
-                                                    <listcell>Customer</listcell>
-                                                    <listcell>Customer</listcell>
+                                                    <listcell label="Kecamatan"/>
+                                                    <listcell label="Kabupaten"/>
+                                                    <listcell label="Propinsi"/>
+                                                    <listcell label="Negara"/>
                                                 </listitem>
                                             </listbox>   
                                         </bandpopup>
