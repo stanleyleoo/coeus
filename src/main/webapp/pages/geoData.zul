@@ -34,12 +34,12 @@
          viewModel="@id('vm') @init('com.lemonhexa.web.ui.web.GeodataVm')">
         <div sclass="row">
             <div sclass="page-header col-md-12 col-xs-12">
-                    <label value="Sales Group"/>
+                    <label value="Geo Data"/>
             </div>
         </div>
         <div sclass="row container-fluid" style="margin:0 auto;">
             <div sclass="col-md-8 col-xs-12">
-                <panel title="Sales Group" sclass="panel-header">
+                <panel title="Geo Data" sclass="panel-header">
                     <panelchildren>
                         <div class="form-group row">
                             <label class="col-sm-12 control-label">District</label>

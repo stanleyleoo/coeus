@@ -19,15 +19,9 @@
             width:12vh;
             text-align:center;
         }
-        .blank .z-label{
-            padding-top:170px;
-        }
     @media screen and (max-width: 1024px) {
         .panel-head{
             font-size:20px;
-        }
-        .blank .z-label{
-            padding-top:0px;
         }
     }
      </style>
@@ -40,7 +34,7 @@
         </div>
         <div sclass="row" style="margin:0 auto;">
             <div class="col-md-6 col-xs-12">    
-                <panel title="Data Umum" sclass="panel-head">
+                <panel title="Data Umum" sclass="panel-head" style="height:1335px;">
                     <panelchildren>
                             <div class="form-group row">
                                 <label class="col-sm-12 control-label">Global Record ID</label>
@@ -75,13 +69,37 @@
                             <div class="form-group row">
                                 <label class="col-sm-12 control-label">Data Geografis</label>
                                 <div class="col-sm-12">
-                                    <listbox id="DataGeografis" mold="select" sclass="listbox form-control input-sm">
-                                        <listitem label="1"/>
-                                        <listitem label="2"/>
-                                        <listitem label="3"/>
-                                        <listitem label="4"/>
-                                        <listitem label="5"/>
-                                    </listbox>     
+                                     <bandbox id="DataGeografis" mold="rounded" autodrop="true" hflex="1">
+                                        <bandpopup>
+                                            <listbox id="DataGeografislb" mold="paging" width="620px" autopaging="true"
+                                            onSelect="DataGeografis.value=self.selectedItem.label; DataGeografis.close();">
+                                                <listhead>
+                                                    <listheader>Kecamatan</listheader>
+                                                    <listheader>Kabupaten</listheader>
+                                                    <listheader>Propinsi</listheader>
+                                                    <listheader>Negara</listheader>
+                                                </listhead>
+                                                <listitem>
+                                                    <listcell>Customer</listcell>
+                                                    <listcell>Customer</listcell>
+                                                    <listcell>Customer</listcell>
+                                                    <listcell>Customer</listcell>
+                                                </listitem>
+                                                <listitem>
+                                                    <listcell>Customer</listcell>
+                                                    <listcell>Customer</listcell>
+                                                    <listcell>Customer</listcell>
+                                                    <listcell>Customer</listcell>
+                                                </listitem>
+                                                <listitem>
+                                                    <listcell>Customer</listcell>
+                                                    <listcell>Customer</listcell>
+                                                    <listcell>Customer</listcell>
+                                                    <listcell>Customer</listcell>
+                                                </listitem>
+                                            </listbox>   
+                                        </bandpopup>
+                                    </bandbox>   
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -152,9 +170,6 @@
                                 <div class="col-sm-12">
                                     <textbox id="Catatan" rows="2" sclass="nama form-control input-sm"/>
                                 </div>
-                            </div>
-                            <div class="form-group row blank">
-                                <label class="col-sm-12 control-label"/>
                             </div>
                     </panelchildren>
                 </panel>
