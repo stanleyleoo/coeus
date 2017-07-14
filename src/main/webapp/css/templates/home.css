@@ -3,12 +3,13 @@
     overflow-y: auto;
 }
 .page-header{
-            background-color:white;
-        }
+    background-color:white;
+    height:60px;
+}
 .page-header .z-label{
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color:#878787;
-    padding-left:20px;
+    padding:0px 0 0 20px;
 }
 .z-tabpanel{
     padding:0;

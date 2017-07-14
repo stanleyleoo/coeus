@@ -22,6 +22,9 @@
         <div sclass="container-fluid">
             <div sclass="row">
                 <include src="templates/sidebar.zul"/>
+<!--                <div sclass="container-fluid" height="50px" style="background-color:#2a2951;">
+                    <label>This is test</label>
+                </div>-->
                 <div sclass="tabbox">
                     <tabbox model="@load(vm.tabsModel)" hflex="1" sclass="mainmenu">
                      <template name="model:tab" var="detail">

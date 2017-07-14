@@ -15,7 +15,7 @@
             background-color: #fff;
         }
         .btn{
-            margin:0 2vh;
+            margin:1vh 2vh;
             width:12vh;
             text-align:center;
         }
@@ -29,8 +29,14 @@
 	height="100%" width="100%">
         <div sclass="row">
             <div sclass="page-header col-md-12 col-xs-12">
-                    <label value="Profil Perusahaan"/>
-            </div>
+                <label value="Profil Perusahaan"/>
+                <div sclass="pull-right">
+                    <button sclass="save btn btn-primary btn-sm col-xs-4" label="Save"/>
+                    <button sclass="browse btn btn-primary btn-sm col-xs-4" label="Browse"/>
+    <!--                <button sclass="cancel btn btn-primary btn-lg col-xs-4">Cancel</button>
+                    <button sclass="delete btn btn-danger btn-lg col-xs-4">Delete</button>-->
+                </div>
+            </div>    
         </div>
         <div sclass="row" style="margin:0 auto;">
             <div class="col-md-6 col-xs-12">    
@@ -498,15 +504,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div sclass="row">
+<!--                        <div sclass="row">
                             <div class="pull-right">
                                 <button sclass="save btn btn-primary btn-sm col-xs-4" label="Save"/>
                                 <button sclass="browse btn btn-primary btn-sm col-xs-4" label="Browse"/>
-<!--                                    <button sclass="cancel btn btn-primary btn-lg col-xs-4">Cancel</button>
-                                <button sclass="delete btn btn-danger btn-lg col-xs-4">Delete</button>-->
-
+                                <button sclass="cancel btn btn-primary btn-lg col-xs-4">Cancel</button>
+                                <button sclass="delete btn btn-danger btn-lg col-xs-4">Delete</button>
                             </div>
-                        </div>
+                        </div>-->
                     </panelchildren>
                 </panel>
             </div>
