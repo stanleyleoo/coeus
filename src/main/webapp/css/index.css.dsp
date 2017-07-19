@@ -2335,19 +2335,7 @@ body {
   margin: 0;
   padding: 8px 20px 24px;
 }
-.page-header {
-  margin: 0 0 12px;
-  border-bottom: 1px dotted #E2E2E2;
-  padding-bottom: 16px;
-  padding-top: 7px;
-}
-.page-header .z-label {
-  padding: 0;
-  margin: 0 8px;
-  font-size: 24px;
-  font-weight: lighter;
-  color: #2679B5;
-}
+
 .page-header .subtitle {
   font-size: 14px;
   cursor: default;

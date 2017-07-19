@@ -15,7 +15,7 @@
         .panel-header > .panel-body{
             background-color: #fff;
         }
-        .btn{
+        .save,.browse,.cancel,.delete{
             margin:0 2vh;
             width:9vh;
             text-align:center;

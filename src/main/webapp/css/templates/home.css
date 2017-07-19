@@ -2,14 +2,19 @@
     background-color: #f0f0f0;
     overflow-y: auto;
 }
+
 .page-header{
+    margin: 0 0 12px;
+    padding-top: 14px;
     background-color:white;
     height:60px;
 }
 .page-header .z-label{
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color:#878787;
-    padding:0px 0 0 20px;
+    margin: 0 0 0 20px;
+    font-size: 24px;
+    font-weight: lighter;
 }
 .z-tabpanel{
     padding:0;
