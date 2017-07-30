@@ -23,6 +23,7 @@
 }
 .tabbox{
     margin-left:190px;
+    width: 1000px;
 }
 .homepage{
     margin:0;
@@ -40,6 +41,35 @@
 .listbox{
     border:1px solid #eaebed;
     background: transparent;
+}
+.z-listbox{
+    background-color:white;
+}
+.z-listbox-header{
+    background:#fefefd;
+    border:none;
+}
+.z-auxheader{
+    border-left:none;
+    background:white;
+}
+.z-listbox-header table th, .z-listbox-header .z-listcell{
+    background-clip:border-box;
+}
+.z-listitem:hover > .z-listcell {
+    background-color: white;
+  }
+.z-listitem,
+.z-listitem:nth-of-type(even) {
+  background: #f8f8f9;
+}
+.z-listitem,
+.z-listitem:nth-of-type(odd) {
+  background: #fefefd; 
+}
+.z-listhead, .z-listheader {
+    background:white;
+
 }
 @media screen and (max-width: 1024px) {
         .tabbox{

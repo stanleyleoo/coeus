@@ -34,7 +34,7 @@
     }
 </style>
 <vlayout sclass="right-col container-fluid" id="layoutWindow" width="100%" height="100%"
-        apply="com.lemonhexa.web.templates.sidebarComposer,org.zkoss.bind.BindComposer"
+        apply="com.lemonhexa.web.templates.sidebarComposer"
         validationMessages="@id('vmsgs')" viewModel="@id('vm') @init('com.lemonhexa.web.component.GeodataBrowseData')" >            
 <!--        <caption id="caption" label="List Geodata | Browse Data" style="margin: 0px 0px 0px 10px;vertical-align: middle;padding:0px 15px 0px 0px;font-weight: bold;font-size: 10pt; font-family: Verdana, Arial, Helvetica, sans-serif;color:#333;"/>
     <custom-attributes org.zkoss.zul.listbox.rod="true"/>
